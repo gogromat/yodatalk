@@ -31,11 +31,11 @@
         
         
         <section class="header">
-            <span class="header lobster">
+            <span class="header galaxy">
                 YodaTalk
             </span>
             <div class="laser">
-                <sup class="color_laser">_________________________________</sup>
+                <sup>____</sup><sup class="color_laser">____________________</sup>
             </div>
         </section>
         
@@ -43,7 +43,7 @@
         
         
         <section class="slogan">
-            <div class="intro lobster centered text-centered">
+            <div class="intro galaxy centered text-centered">
                 Calm You
                 <!--<br> -->
                 Shall Keep
@@ -59,15 +59,18 @@
             
             
         <section class="introduction">        
-            <div class="main centered">
+            <div class="main centered three_columns">
                 To this page welcome!
                 <br>
-                Do you want to see how difficult it is to translate human languages?
-                Even Grand Master have problems keeping up with the meaning.
-                Try YodaTalk and see for yourself. 
-                Just choose different languages, so the translation will be more Yoda-Talk-like
-                For now the translation sequence is this: English -> Japanese -> Swedish -> English.
-                Be sure to try out some weird languages.    
+                Do you want to see how it is difficult to translate human languages?
+                Even the Grand Master have problems keeping up with the meaning.
+                Try YodaTalk, and see for yourself. 
+                Just choose different languages, so the translation will be more Yoda-Talk-like.
+                For now the translation sequence is this: English &rarr; Japanese &rarr; Swedish &rarr; English.
+                Be sure to try out other combinations of languages. 
+                YodaTalk is language-independent. It works in other languages, just because translation algorithms are
+                not clever. Be sure to try different input/output languages if you are a multilingual person.
+                And as Yoda said: “In a dark place we find ourselves, and a little more knowledge lights our way.”
             </div>
         </section>
         
@@ -120,11 +123,17 @@
             
         </ul>
         
-        <button id="translate" class="translate_button" >Me translate!</button>
+        <button id="translate" class="translate_button galaxy" >To translate here click you must!</button>
 
         
         
-        
+        <section class="details">
+            <div class="main centered three_columns">
+                As you probably already know, YodaTalk does not shift words around to make it
+                seem as if Master Yoda was talking. If you are looking for that, the <a href="http://www.yodaspeak.co.uk" class="galaxy link yoda_speak" target="_blank">YodaSpeak</a>
+                is a tool that will help you.
+            </div>
+        </section>
         
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -132,8 +141,14 @@
         <script src="node_modules/q/q.js"></script>
         
         <script src="libs/js/plugins.js"></script>
-                
+        
+        <!--Main SRC file-->
+        <script src="src/yodaTalk.js"></script>
+        
         <script>
+        
+            var root = this;
+        
             $(document).ready(function() {
                 
                 console.clear();
@@ -145,6 +160,8 @@
                         "value": element.abbreviation.gt
                     }
                 }
+                
+                
                  
                 var input = new Selectoid({
                     object: "#language_input",
@@ -153,6 +170,7 @@
                         initial: "en",
                         closeOnMouseLeave: false,
                         closeOnFocusOut: false,
+                        button_class: "galaxy"
                     },
                     dataFormat: formatLanguage
                 });
@@ -162,8 +180,7 @@
                     data: Languages,
                     parameters: {
                         initial: "ja",//zh-cn
-                        closeOnMouseLeave: true,
-                        closeOnFocusOut: true,
+                        button_class: "galaxy"
                     },         
                     dataFormat: formatLanguage
                 });
@@ -173,8 +190,7 @@
                     data: Languages,
                     parameters: {
                         initial: "sv",//de
-                        closeOnMouseLeave: true,
-                        closeOnFocusOut: true,
+                        button_class: "galaxy"
                     },         
                     dataFormat: formatLanguage
                 });
@@ -184,17 +200,22 @@
                     data: Languages,
                     parameters: {
                         initial: "en",
-                        closeOnMouseLeave: true,
-                        closeOnFocusOut: true,
+                        button_class: "galaxy"
                     },         
                     dataFormat: formatLanguage
                 });
                 
+                
+                //todo: first changes the last
+                
+                
+                root.LightSaber(".color_laser");
+                
+                
             });
         </script>
         
-        <!--Main SRC file-->
-        <script src="src/yodaTalk.js"></script>
+
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

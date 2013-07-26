@@ -1,6 +1,8 @@
 //var window = this;
 //global $
 
+
+
 $(window.document).ready(function () {
     
     "use strict";
@@ -375,7 +377,11 @@ $(window.document).ready(function () {
 
     //$(".add_element").on("click", function () {});
     //$(".clear").click(function () {});
-    
+        
+});
+
+
+(function () {
     var colors =  [
         "rgb(255, 255, 255)",   //white
         "rgb(0, 0, 255)",       //blue 
@@ -386,20 +392,23 @@ $(window.document).ready(function () {
         "rgb(0, 128, 0)",       //vert - green
         "rgb(143, 0, 255)",     //violet
         "rgb(64, 130, 109)"     //viridien - green
-    ];
+    ], LightSaber,
+        root = this;
     
-    setInterval(function () {
-        var length = colors.length,
-            currentColor = $(".color_laser").css("color"),
-            index = 0;
-        for (var i = 0; i < length; i++) {
-            if (colors[i] === currentColor) index = i;
-        }
-        if (index == length-1) index = -1;
-        $(".color_laser").css("color", colors[index+1]);
-    }, 5000);
+    LightSaber = function (element) {
+       setInterval(function () {
+            var length = colors.length,
+                currentColor = $(element).css("color"),
+                index = 0;
+            for (var i = 0; i < length; i++) {
+                if (colors[i] === currentColor) index = i;
+            }
+            if (index == length-1) index = -1;
+            $(element).css("color", colors[index+1]);
+        }, 5000);            
+    }
     
+    root.LightSaber = LightSaber;
+
+})();
     
-    
-    
-});

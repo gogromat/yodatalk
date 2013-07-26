@@ -70,12 +70,8 @@
 }
 
 @font-face {
-    font-family: 'Lobster';
-    /*src: url('../fonts/Lobster_1.4.otf');*/
-    /*     url('../fonts/Lobster_2.B-I.ttf');*/
-
+    font-family: 'Galaxy';    
     src: url('../fonts/SFDistantGalaxy/SFDistantGalaxy.ttf');
-         /*//url('../fonts/SFDistantGalaxy/');*/
 }
 
 .laser {
@@ -85,9 +81,22 @@
     color: blue;
 }
 
-.lobster {
-    font-family: 'Lobster', Verdana, Tahoma;
+.galaxy {
+    font-family: 'Galaxy', Verdana, Tahoma;
 }
+.link.galaxy {
+    text-decoration: none;
+    color: black;
+}
+
+.yoda_speak:before {
+    content: url('../img/yoda_speak.gif');
+    background-size: 10px 10px;
+    zoom: 0.7;
+}
+
+
+
 .header {
     background-color: #7ab888;
     font-size: 42px;
@@ -110,35 +119,42 @@
 }
 
 .main {
-    
-    margin-top: 5px;
-    margin-bottom: 5px;
-    
+    margin-top: 15px;
+    margin-bottom: 15px;    
     width: 80%;
     font-size: 1.1em;
-    
+}
+
+
+.three_columns {
     column-count: 3;
     -moz-column-count: 3;
     -webkit-column-count: 3;
     
-    column-rule: 1px dashed #C3C3C3;
-    -moz-column-rule: 1px dashed #C3C3C3;
-    -webkit-column-rule: 1px dashed #C3C3C3;
+    /*column-rule: 1px dashed #C3C3C3;*/
+    /*-moz-column-rule: 1px dashed #C3C3C3;*/
+    /*-webkit-column-rule: 1px dashed #C3C3C3;*/
+    
+    column-gap:50px;
+    -moz-column-gap:50px;
+    -webkit-column-gap:50px;    
 }
 
-
 button {
-    background-color: #7ab888 !important;
+    /*!important;*/
+    background-color: #F2F2F2;    
 }
 
 
 .translate_button {
+    background-color: #7ab888;
     height: 38px;
-    /*background-color: #F2F2F2;*/
     border: solid 1px #F5F5F5;
     min-width: 150px;
     padding: 10px;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
