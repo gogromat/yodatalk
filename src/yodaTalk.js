@@ -375,4 +375,31 @@ $(window.document).ready(function () {
 
     //$(".add_element").on("click", function () {});
     //$(".clear").click(function () {});
+    
+    var colors =  [
+        "rgb(255, 255, 255)",   //white
+        "rgb(0, 0, 255)",       //blue 
+        "rgb(0, 255, 255)",     //cyan - light blue
+        "rgb(255, 165, 0)",     //orange
+        "rgb(255, 255, 0)",     //jaune - gold
+        "rgb(255, 0, 0)",       //rouge - red
+        "rgb(0, 128, 0)",       //vert - green
+        "rgb(143, 0, 255)",     //violet
+        "rgb(64, 130, 109)"     //viridien - green
+    ];
+    
+    setInterval(function () {
+        var length = colors.length,
+            currentColor = $(".color_laser").css("color"),
+            index = 0;
+        for (var i = 0; i < length; i++) {
+            if (colors[i] === currentColor) index = i;
+        }
+        if (index == length-1) index = -1;
+        $(".color_laser").css("color", colors[index+1]);
+    }, 5000);
+    
+    
+    
+    
 });

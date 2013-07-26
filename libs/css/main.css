@@ -70,16 +70,61 @@
 }
 
 @font-face {
-    font-family: "Lobster";
-    src: url(fonts/Lobster1_3.otf);
+    font-family: 'Lobster';
+    /*src: url('../fonts/Lobster_1.4.otf');*/
+    /*     url('../fonts/Lobster_2.B-I.ttf');*/
+
+    src: url('../fonts/SFDistantGalaxy/SFDistantGalaxy.ttf');
+         /*//url('../fonts/SFDistantGalaxy/');*/
 }
 
+.laser {
+    display: inline;
+}
+.color_laser {
+    color: blue;
+}
+
+.lobster {
+    font-family: 'Lobster', Verdana, Tahoma;
+}
 .header {
     background-color: #7ab888;
-    font-family: "Lobster", Verdana, Tahoma;
+    font-size: 42px;
+    padding: 5px;
+    text-shadow: 2px 2px #F5F5F5;
+}
+.intro {
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #d1d4d6;
 }
 
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-centered {
+    text-align: center;
+}
 
+.main {
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+    width: 80%;
+    font-size: 1.1em;
+    
+    column-count: 3;
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    
+    column-rule: 1px dashed #C3C3C3;
+    -moz-column-rule: 1px dashed #C3C3C3;
+    -webkit-column-rule: 1px dashed #C3C3C3;
+}
 
 
 button {
