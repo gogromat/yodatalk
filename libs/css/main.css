@@ -1,0 +1,113 @@
+/* LISTS */
+.translation_list {
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    list-style: none;
+}
+
+.translation_list li {
+    padding: 10px;
+}
+
+.translation_list div.conversion {
+    min-height: 100px;
+    /*overflow: auto;*/
+    border-top: solid 1px #F1F1F1;
+    border-bottom: solid 1px #F1F1F1;
+}
+
+.translation_list li.add_element {
+    min-height: 40px;
+    width: 90%;
+    margin: 0px auto;
+}
+
+.translation_list .add_element:hover {
+    background-color: #F5F5F5;
+    /*border-box:*/
+    
+}
+
+
+
+.hr {
+    background-image: url("../img/test.png");
+    background-repeat: repeat-x;
+    height: 3px;
+    background-position: 2px 0px;
+}
+
+#input_text:focus {
+    cursor: text !important;
+}
+#input_text:hover {
+    cursor: text !important;
+}
+
+/* DIVS */
+
+.conversion_div {
+    width: 75%;
+    /*padding: 10px;*/
+    
+    float: right;
+    min-height: 100px;
+    
+    /* for non-utf-8 conformant character sets */
+    overflow: auto;
+    
+    border: solid 4px #F1F1F1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.language {
+    float: left;
+    width: 15%;
+    margin-right: 25px;
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: url(fonts/Lobster1_3.otf);
+}
+
+.header {
+    background-color: #7ab888;
+    font-family: "Lobster", Verdana, Tahoma;
+}
+
+
+
+
+button {
+    background-color: #7ab888 !important;
+}
+
+
+.translate_button {
+    height: 38px;
+    /*background-color: #F2F2F2;*/
+    border: solid 1px #F5F5F5;
+    min-width: 150px;
+    padding: 10px;
+    display: block;
+}
+
+
+
+/* YODA */
+.yoda {
+    height: 75px;
+    background-image: url('../img/yoda.png');
+    background-repeat: no-repeat;
+    background-position: 0px;
+    display: none;
+}
+.yoda.relative {
+    position: relative;
+    z-index: 100000;
+    top: 7px;
+}

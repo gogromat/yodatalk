@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>YodaTalk</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="libs/css/normalize.css">
+        <link rel="stylesheet" href="libs/css/boilerplate.css">
+        <link rel="stylesheet" href="libs/css/main.css">
+        <link rel="stylesheet" href="node_modules/selectoid/lib/selectoid.css">
+        <script src="libs/js/modernizr-2.6.2.min.js"></script>
+        <script src="libs/js/jquery_1.10.0_min.js"></script>
+        <script src="libs/js/languages.js"></script>
+        <script src="node_modules/selectoid/lib/selectoid.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <section class="header">
+            YodaTalk
+        </section>
+        <div class="hr"></div>
+        
+        
+        
+        <div class="intro">
+        
+        
+            
+        
+            Calm You<br> 
+            Shall Keep<br>
+            And<br>
+            Carry On<br>
+            You Must
+        </div>
+            
+            
+            
+            
+        <div class="main">
+        
+            To this page welcome!
+            
+            <p>
+                Do you want to see how it is difficult to translate natural languages?
+                <br>
+                Try YodaTalk and see for yourself. 
+                <br>
+                Set the input/output languages and feel free to add
+                as many intermediate languages to translate.
+                <br>
+                By default the input/output text is set to English language.
+            <br>
+            </p>
+            
+        </div>
+
+        
+        <ul class="translation_list">
+            
+            <!-- i -->
+            <li id="input" class="element">
+                
+                <div class="conversion">
+                    <div class="selectoid language" id="language_input"></div>
+                    <div id="input_text" contenteditable="true" class="conversion_div">
+                        I like to swim in a blue ocean. 
+                        It makes me very relaxed and calm. 
+                        Although the water feels cold, after a while I get used to it and can swim for very long time.
+                    </div>                    
+                </div>
+            </li>
+            
+            <li class="add_element"></li>
+            
+            <li class="element">
+                <div class="yoda relative"></div>
+                <div class="conversion">
+                    <div class="selectoid language" id="one"></div>
+                    <div class="conversion_div"></div>    
+                </div>
+            </li>
+            
+            <li class="add_element"></li>
+            
+            <li class="element">
+                <div class="yoda relative"></div>
+                <div class="conversion">
+                    <div class="selectoid language" id="two"></div>
+                    <div class="conversion_div"></div>    
+                </div>
+            </li>
+            
+
+            <li class="add_element"></li>
+            
+            <li id="output" class="element">
+                <div class="yoda relative"></div>
+                <div class="conversion">
+                    <div class="selectoid language" id="language_output"></div>
+                    <div id="output_text" class="conversion_div"></div>
+                </div>
+            </li>
+            
+        </ul>
+        
+        <button id="translate" class="translate_button" >Me translate!</button>
+
+        
+        
+        
+        
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="libs/js/jquery_1.10.0_min.js"><\/script>')</script>
+        <script src="node_modules/q/q.js"></script>
+        
+        <script src="libs/js/plugins.js"></script>
+                
+        <script>
+            $(document).ready(function() {
+                
+                console.clear();
+                
+                
+                function formatLanguage(element) {
+                    return {
+                        "name":  element.name,
+                        "value": element.abbreviation.gt
+                    }
+                }
+                 
+                var input = new Selectoid({
+                    object: "#language_input",
+                    data: Languages,
+                    parameters: {
+                        initial: "en",
+                        closeOnMouseLeave: false,
+                        closeOnFocusOut: false,
+                    },
+                    dataFormat: formatLanguage
+                });
+
+                var in1 = new Selectoid({
+                    object: "#one",
+                    data: Languages,
+                    parameters: {
+                        initial: "ja",//zh-cn
+                        closeOnMouseLeave: true,
+                        closeOnFocusOut: true,
+                    },         
+                    dataFormat: formatLanguage
+                });
+                
+                var in2 = new Selectoid({
+                    object: "#two",
+                    data: Languages,
+                    parameters: {
+                        initial: "sv",//de
+                        closeOnMouseLeave: true,
+                        closeOnFocusOut: true,
+                    },         
+                    dataFormat: formatLanguage
+                });
+
+                var output = new Selectoid({
+                    object: "#language_output",
+                    data: Languages,
+                    parameters: {
+                        initial: "en",
+                        closeOnMouseLeave: true,
+                        closeOnFocusOut: true,
+                    },         
+                    dataFormat: formatLanguage
+                });
+                
+            });
+        </script>
+        
+        <!--Main SRC file-->
+        <script src="src/yodaTalk.js"></script>
+        
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            /*
+                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                g.src='//www.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g,s)}(document,'script'));
+            */
+        </script>
+    </body>
+</html>
