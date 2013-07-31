@@ -35,7 +35,7 @@
                 YodaTalk
             </span>
             <div class="laser">
-                <sup>____</sup><sup class="color_laser">____________________</sup>
+                <sup>____</sup><sup class="color_laser">___________________</sup>
             </div>
         </section>
         
@@ -63,29 +63,38 @@
                 To this page welcome!
                 <br>
                 Do you want to see how it is difficult to translate human languages?
-                Even the Grand Master have problems keeping up with the meaning.
+                Even the Grand Master have problems keeping up with the meaning. 
                 Try YodaTalk, and see for yourself. 
-                Just choose different languages, so the translation will be more Yoda-Talk-like.
-                For now the translation sequence is this: English &rarr; Japanese &rarr; Swedish &rarr; English.
+                Just choose different languages, so the translation will be more Yoda-talk-like.
+                As you can see now the default translation sequence is: 
+                English &rarr; Japanese &rarr; Swedish &rarr; English.
                 Be sure to try out other combinations of languages. 
-                YodaTalk is language-independent. It works in other languages, just because translation algorithms are
-                not clever. Be sure to try different input/output languages if you are a multilingual person.
-                And as Yoda said: “In a dark place we find ourselves, and a little more knowledge lights our way.”
+                YodaTalk is language-independent - it works not only with English language.
+                It works in other languages, just because the algorithms we use for translations are not that good yet.
+                These algorithms make mistakes.
+                Be sure to try different input/output languages if you are a multilingual person.
+                As Master once said: “In a dark place we find ourselves, 
+                and a little more knowledge lights our way.”
             </div>
         </section>
         
+        <div class="centered">
+            <button class="translate_button galaxy" >To translate here click you must!</button>
+        </div>
+        
         
         <ul class="translation_list">
-            
-            <!-- i -->
+        
             <li id="input" class="element">
-                
                 <div class="conversion">
-                    <div class="selectoid language" id="language_input"></div>
+                    <div class="leftSide">
+                        <div class="selectoid" id="language_input"></div>
+                    </div>
                     <div id="input_text" contenteditable="true" class="conversion_div">
                         I like to swim in a blue ocean. 
                         It makes me very relaxed and calm. 
-                        Although the water feels cold, after a while I get used to it and can swim for very long time.
+                        Although the water feels cold, after a while I get 
+                        used to it and can swim for very long time.
                     </div>                    
                 </div>
             </li>
@@ -95,7 +104,11 @@
             <li class="element">
                 <div class="yoda relative"></div>
                 <div class="conversion">
-                    <div class="selectoid language" id="one"></div>
+                    <div class="leftSide">
+                        <div class="selectoid language" id="one"></div>
+                        <br>
+                        <button class="galaxy">remove</button>
+                    </div>
                     <div class="conversion_div"></div>    
                 </div>
             </li>
@@ -105,13 +118,20 @@
             <li class="element">
                 <div class="yoda relative"></div>
                 <div class="conversion">
-                    <div class="selectoid language" id="two"></div>
+                    <div class="leftSide">
+                        <div class="selectoid language" id="two"></div>
+                        <br>
+                        <button class="galaxy">remove</button>
+                    </div>
                     <div class="conversion_div"></div>    
                 </div>
             </li>
             
-
             <li class="add_element"></li>
+            
+            <li>
+                <button class="toggle_elements galaxy">... show all translations ...</button>
+            </li>
             
             <li id="output" class="element">
                 <div class="yoda relative"></div>
@@ -123,9 +143,9 @@
             
         </ul>
         
-        <button id="translate" class="translate_button galaxy" >To translate here click you must!</button>
-
-        
+        <div class="centered">
+            <button class="translate_button galaxy" >To translate here click you must!</button>
+        </div>
         
         <section class="details">
             <div class="main centered three_columns">
@@ -135,6 +155,18 @@
             </div>
         </section>
         
+        <div class="centered qr">
+            <img src="libs/img/qr.png" width="100px" height="100px" class="centered" />
+        </div>
+        
+        <div class="hr"></div>
+        
+        <footer>
+            <p class="centered">
+                designed & developed by 
+                <a href="https://github.com/gogromat/" target="_blank" class="galaxy link">GogromaT</a>
+            </p>
+        </footer>
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="libs/js/jquery_1.10.0_min.js"><\/script>')</script>
@@ -144,8 +176,22 @@
         
         <!--Main SRC file-->
         <script src="src/yodaTalk.js"></script>
+        <script src="src/lightSaber.js"></script>
+        
         
         <script>
+        
+        function meths(obj, contains, check) {
+            var methods = [], check = check || "function";
+            for (var m in obj) {
+                if (typeof obj[m] == check) {
+                    if ((contains && m.match(contains)) || !contains) methods.push(m);
+                }
+            }
+            return (methods.join(","));
+        }
+            
+        
         
             var root = this;
         
@@ -162,7 +208,6 @@
                 }
                 
                 
-                 
                 var input = new Selectoid({
                     object: "#language_input",
                     data: Languages,
@@ -206,7 +251,7 @@
                 });
                 
                 
-                //todo: first changes the last
+                //todo: first changes the last input
                 
                 
                 root.LightSaber(".color_laser");
