@@ -107,7 +107,7 @@
                     <div class="leftSide">
                         <div class="selectoid language" id="one"></div>
                         <br>
-                        <button class="galaxy">remove</button>
+                        <button class="galaxy remove">remove</button>
                     </div>
                     <div class="conversion_div"></div>    
                 </div>
@@ -121,7 +121,7 @@
                     <div class="leftSide">
                         <div class="selectoid language" id="two"></div>
                         <br>
-                        <button class="galaxy">remove</button>
+                        <button class="galaxy remove">remove</button>
                     </div>
                     <div class="conversion_div"></div>    
                 </div>
@@ -174,93 +174,23 @@
         
         <script src="libs/js/plugins.js"></script>
         
-        <!--Main SRC file-->
-        <script src="src/yodaTalk.js"></script>
+        <!--Light Saber div-->
         <script src="src/lightSaber.js"></script>
         
+        <!-- Free google's translator using spreadsheets (author: Sangdol) -->
+        <script src="src/sangdolTranslator.js"></script>
         
-        <script>
+        <!-- Progress Bar. Yoda Progress Bar -->
+        <script src="src/yodaProgress.js"></script>
         
-        function meths(obj, contains, check) {
-            var methods = [], check = check || "function";
-            for (var m in obj) {
-                if (typeof obj[m] == check) {
-                    if ((contains && m.match(contains)) || !contains) methods.push(m);
-                }
-            }
-            return (methods.join(","));
-        }
-            
+        <!-- Mimics human typing of text -->
+        <script src="src/teletype.js"></script>        
         
+        <!-- Yoda html stack -->
+        <script src="src/yodaStack.js"></script>
         
-            var root = this;
-        
-            $(document).ready(function() {
-                
-                console.clear();
-                
-                
-                function formatLanguage(element) {
-                    return {
-                        "name":  element.name,
-                        "value": element.abbreviation.gt
-                    }
-                }
-                
-                
-                var input = new Selectoid({
-                    object: "#language_input",
-                    data: Languages,
-                    parameters: {
-                        initial: "en",
-                        closeOnMouseLeave: false,
-                        closeOnFocusOut: false,
-                        button_class: "galaxy"
-                    },
-                    dataFormat: formatLanguage
-                });
-
-                var in1 = new Selectoid({
-                    object: "#one",
-                    data: Languages,
-                    parameters: {
-                        initial: "ja",//zh-cn
-                        button_class: "galaxy"
-                    },         
-                    dataFormat: formatLanguage
-                });
-                
-                var in2 = new Selectoid({
-                    object: "#two",
-                    data: Languages,
-                    parameters: {
-                        initial: "sv",//de
-                        button_class: "galaxy"
-                    },         
-                    dataFormat: formatLanguage
-                });
-
-                var output = new Selectoid({
-                    object: "#language_output",
-                    data: Languages,
-                    parameters: {
-                        initial: "en",
-                        button_class: "galaxy"
-                    },         
-                    dataFormat: formatLanguage
-                });
-                
-                
-                //todo: first changes the last input
-                
-                
-                root.LightSaber(".color_laser");
-                
-                
-            });
-        </script>
-        
-
+        <!--Main SRC file-->
+        <script src="src/yodaTalk.js"></script>
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
