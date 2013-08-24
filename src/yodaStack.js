@@ -238,7 +238,7 @@
                         "<div class='conversion'>" +
                             "<div class='leftSide'>" +
                                 "<div class='selectoid language' data-initial='en'></div><br>" +
-                                "<button class='galaxy remove'>remove</button>" +
+                                "<button class='galaxy remove'><i class='icon-minus-sign'></i>&nbsp;remove</button>" +
                             "</div>" +
                             "<div class='conversion_div'></div>" +
                         "</div>" +

@@ -295,6 +295,10 @@ button {
     color: #257;
 }
 
+div.arrow-down {
+    border-top: 8px solid #257;
+}
+
 .translate_button {
     background-color: black; /*#7ab888;*/
     /*height: 38px;*/
