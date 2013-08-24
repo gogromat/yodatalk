@@ -1,6 +1,8 @@
-(function () {
+(function ($) {
 
-    var root = this;
+    var root = this,
+    
+        oldYodaProgress = root.YodaProgress;
     
     var getElementId = (function () {
         var incrementingId = 0;
@@ -105,5 +107,14 @@
         }
     };
     
+        
+    // Run YodaProgress in noConflict mode, 
+    // returning the YodaProgress variable to its previous owner. 
+    // Returns a reference to the YodaProgress object.
+    YodaProgress.prototype.noConflict = function () {
+        root.YodaProgress = oldYodaProgress;
+        return this;
+    };
+    
     root.YodaProgress = YodaProgress;
-})();
+}).call(this, jQuery);

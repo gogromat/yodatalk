@@ -7,7 +7,7 @@
 }
 
 .translation_list li {
-    padding: 10px;
+    padding: 20px 5px;
 }
 
 .translation_list div.conversion {
@@ -15,16 +15,36 @@
     border: dashed 1px #F1F1F1;
     padding-top: 0px;
     padding-bottom: 8px;
+    font-family: myriad-pro, sans-serif;
+    
 }
 
 .translation_list li.add_element {
     min-height: 40px;
-    width: 90%;
+    width: 100%;
     margin: 0px auto;
+    color: rgb(34, 85, 119);
+    color: green;
+}
+
+.add_element i {
+    font-size: 30px;
+    vertical-align: middle;
+    padding-left: 19px;
 }
 
 .translation_list .add_element:hover {
     background-color: #F5F5F5;
+    cursor: cell;
+}
+
+
+button.remove {
+    color: rgb(190,0,0);
+}
+button.remove i {
+    font-size: 30px;
+    vertical-align: middle;
 }
 
 
@@ -34,23 +54,56 @@
     font-family: 'Galaxy';    
     src: url('../fonts/SFDistantGalaxy/SFDistantGalaxy.ttf');
 }
+@font-face {
+    font-family: 'GalaxyOutline';    
+    src: url('../fonts/SFDistantGalaxy/SFDistantGalaxyOutline.ttf');
+}
+@font-face {
+    font-family: 'GalaxyAltOutline';    
+    src: url('../fonts/SFDistantGalaxy/SFDistantGalaxyAltOutline.ttf');
+}
+@font-face {
+    font-family: 'myriad-pro';
+    src: url('../fonts/MyriadPro/myriadpro-regular.otf');
+    font-style: normal; 
+    font-weight: 100;
+}
+
+
 .galaxy {
     font-family: 'Galaxy', Verdana, Tahoma;
+}
+.galaxy.outline {
+    font-family: 'GalaxyOutline';
+}
+.galaxy.outline.alt {
+    font-family: 'GalaxyAltOutline';
 }
 
 
 /* LINKS */
 
-.laser {
-    display: inline;
+.lightSaber {
+    text-align:center;
+    line-height: 0px;
+    padding-bottom: 20px;
+    font-size: 100px;
+    
+    background-color: none;
 }
-.color_laser {
-    color: blue;
+.lightSaber .base {
+}
+.lightSaber .color_laser {
+    color: white;
+    /*box-shadow: inset 0 0 5px #01fe32, 0 0 20px #08ff35, 0 0 30px #08ff35,0 0 20px #08ff35;*/
+    /*webkit-box-shadow: inset 0 0 5px #01fe32, 0 0 20px #08ff35, 0 0 30px #08ff35,0 0 20px #08ff35;*/
 }
 
 
+.link {
+    text-decoration: none;    
+}
 .link.galaxy {
-    text-decoration: none;
     color: black;
 }
 
@@ -59,17 +112,35 @@
     background-size: 10px 10px;
     zoom: 0.7;
 }
+.link.contact {
+    color: yellow;
+    font-size: 50px;
+}
 
 
 
 /* SECTIONS / DIVS */
 
-.header {
-    background-color: #7ab888;
-    font-size: 42px;
+section.header {
+    background-color: black;
     padding: 10px;
-    text-shadow: 2px 2px #F5F5F5;
+    
+    text-align: center;
 }
+.preBrand {
+    color: #20F7CD;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+.brand {
+    font-size: 50px;
+    color: #FFFF70;
+    /*text-shadow: 2px 2px #F5F5F5;*/
+}
+.brand.bottom {
+    margin-top: -34px;
+}
+
 .intro {
     font-size: 30px;
     line-height: 40px;
@@ -110,6 +181,8 @@
     margin-bottom: 15px;    
     width: 80%;
     font-size: 1.1em;
+    font-family: myriad-pro, sans-serif;
+    font-size: 19px;
 }
 
 #input_text:focus {
@@ -147,7 +220,15 @@
         -webkit-column-count: 1;
     }
 }
+@media all and (max-width: 850px) and (min-width: 641px) {
+    .conversion_div {
+        width: 75%;
+    }
+}
 @media all and (max-width: 640px) and (min-width: 0px) {
+    .leftSide {
+        width: 100%;
+    }
     .selectoid {
         width: 100%;
     }
@@ -156,12 +237,21 @@
     }
     .conversion_div {
         width: 100%;
+        border: 1px;
+        padding: 0;
     }
     ul.translation_list {
         margin:0;
-        padding-left: 5px;
+        padding-left: 0px;
         padding-right: 0px;
         width: 100%;
+    }
+    .translation_list div.conversion {
+        min-height: 200px;
+    }
+    button.change_translation, button.translate_button {
+        width: 100%;
+        margin-top: 3px;
     }
 }
 
@@ -190,10 +280,11 @@ footer {
     text-align: center;
 }
 footer p {
-    color: white;
+    color: yellow;
 }
 footer p .galaxy.link {
-    color: white;
+    color: yellow;
+    font-size: 30px;
 }
 
 
@@ -201,10 +292,11 @@ footer p .galaxy.link {
 button {
     background-color: #F2F2F2;
     height: 38px;
+    color: #257;
 }
 
 .translate_button {
-    background-color: #7ab888;
+    background-color: black; /*#7ab888;*/
     /*height: 38px;*/
     /*border: solid 1px #F5F5F5;*/
     min-width: 150px;
@@ -212,6 +304,7 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    color: yellow;
 }
 
 .leftSide  button {
@@ -227,6 +320,14 @@ button {
     width: 80%;
 }
 
+span.centered {
+    display: block;
+    width: 520px;
+}
+.selectedTranslation {
+    background-color: #339966;
+    color: yellow;
+}
 
 
 /* YODA IMAGE */
@@ -262,4 +363,14 @@ button {
     position: relative;
     z-index: 100000;
     top: 7px;
+}
+
+
+/* GITTIP */
+div.gittip-widget {
+    width: 125px;
+    background: yellow url('../img/why3.png') 65px 16px no-repeat;
+}
+div.gittip-widget .gittip-inner a {
+    color: black !important;
 }

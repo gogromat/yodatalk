@@ -6,80 +6,6 @@
 var root = this;
 
 $(window.document).ready(function () {
-    
-    console.clear();
-            
-    function meths(obj, contains, check) {
-        var methods = [], check = check || "function";
-        for (var m in obj) {
-            if (typeof obj[m] == check) {
-                if ((contains && m.match(contains)) || !contains) methods.push(m);
-            }
-        }
-        return (methods.join(","));
-    }
-    
-    function formatLanguage(element) {
-        return {
-            "name":  element.name,
-            "value": element.abbreviation.gt
-        }
-    }
-    
-    
-    var input = new Selectoid({
-        object: "#language_input",
-        data: Languages,
-        parameters: {
-            initial: "en",
-            closeOnMouseLeave: false,
-            closeOnFocusOut: false,
-            button_class: "galaxy"
-        },
-        dataFormat: formatLanguage
-    });
-
-    var in1 = new Selectoid({
-        object: "#one",
-        data: Languages,
-        parameters: {
-            initial: "ja",//zh-cn
-            button_class: "galaxy"
-        },         
-        dataFormat: formatLanguage
-    });
-    
-    var in2 = new Selectoid({
-        object: "#two",
-        data: Languages,
-        parameters: {
-            initial: "sv",//de
-            button_class: "galaxy"
-        },         
-        dataFormat: formatLanguage
-    });
-
-    var output = new Selectoid({
-        object: "#language_output",
-        data: Languages,
-        parameters: {
-            initial: "en",
-            button_class: "galaxy"
-        },         
-        dataFormat: formatLanguage
-    });
-    
-            
-
-            
-            
-    root.LightSaber(".color_laser");
-            
-            
-            
-
-
-
 
     var YodaTalk = function (translator, translationStack) {
         // translator Class
@@ -88,42 +14,66 @@ $(window.document).ready(function () {
         this.translationStack = translationStack;
     };
     
-    var Yoda = new YodaTalk(
-        new root.SangdolTranslator(), 
+    // Initial YodaTalk - for events
+    var YT = new YodaTalk(
+        root.YodaCurrentLanguageSet.getCurrentTranslator(),
         new root.YodaStack({
             items: ".element", 
             addItems: ".add_element"
         })
     );
-                
-  
-
-    $(".translate_button").click(function () {
-        initiateTranslationSequence();
+        
+    $(".change_translation").click(function () {
+        
+        $(".change_translation.selectedTranslation").removeClass("selectedTranslation");
+        
+        $(this).addClass("selectedTranslation");
+        
+        var translator = $(this).data("value");
+        
+        if (translator === "bing") {
+            root.YodaCurrentLanguageSet.setLanguageSet("bing");
+        } else if (translator === "sangdol") {
+            root.YodaCurrentLanguageSet.setLanguageSet("google");   
+        }
+        
+        YT.translationStack.restart();
     });
-  
+    
+    
+    $(".translate_button").click(function () {
+        YT = new YodaTalk(
+            root.YodaCurrentLanguageSet.getCurrentTranslator(), 
+            new root.YodaStack({
+                items: ".element", 
+                addItems: ".add_element"
+            })
+        );
+        initiateTranslationSequence(YT);
+    });
+   
   
     //todo: remove global variables from code
-    function obtainAjaxPromise(someResult, Yoda) {
+    function obtainAjaxPromise(someResult, YodaTalk) {
       
         // text, from, to
-        Yoda.translator.setTranslations.apply(
+        YodaTalk.translator.setTranslations.apply(
             undefined, 
-            Yoda.translationStack.getCurrentStep()    
+            YodaTalk.translationStack.getCurrentStep()    
         );
       
         var promise = Q
-            .when( Yoda.translator.ajaxCall());
+            .when( YodaTalk.translator.ajaxCall());
           
         var textFillInPromise = promise.then(function (result) {
           
-            var resultObject = Yoda.translator.getResultObj(result);
+            var resultObject = YodaTalk.translator.getResultObj(result);
             console.log("RESULT>>>:", resultObject);
-            Yoda.translationStack.pushTranslations(resultObject);
-            var currentResult = Yoda.translationStack.getCurrentResult();
+            YodaTalk.translationStack.pushTranslations(resultObject);
+            var currentResult = YodaTalk.translationStack.getCurrentResult();
           
             // returns a promise
-            return Yoda.translationStack.setNextText(currentResult);
+            return YodaTalk.translationStack.setNextText(currentResult);
           
         }, function (error) {
             console.log("YodaTalk: Error: ", error);
@@ -138,30 +88,27 @@ $(window.document).ready(function () {
             console.log("YodaTalk: Error: ", error);
         }, function (progress) {
             
-            var YodaProgressElement = Yoda.translationStack.getCurrent().progress;
+            var YodaProgressElement = YodaTalk.translationStack.getCurrent().progress;
             if (!YodaProgressElement) return;
             YodaProgressElement.progress(parseFloat(progress));
-            if (YodaProgressElement.isDone()) Yoda.translationStack.deferred.resolve();
+            if (YodaProgressElement.isDone()) YodaTalk.translationStack.deferred.resolve();
             //console.log("Progress %:", progress);
       });
     }
-      
-      
-      
 
-    function initiateTranslationSequence () {
+    function initiateTranslationSequence (YodaTalk) {
         
         $(".toggle_elements").on("click", function () {
-            Yoda.translationStack.toggleMiddleElements("show");
+            YodaTalk.translationStack.toggleMiddleElements("show");
         });
       
         function processItem(prevResult) {
-            return obtainAjaxPromise(prevResult, Yoda);
+            return obtainAjaxPromise(prevResult, YodaTalk);
         }
         
       
         var nextTick = Q.when(),
-            length = Yoda.translationStack.getStackSize();
+            length = YodaTalk.translationStack.getStackSize();
         
         for (var i = length; i > 1; i --) {
             nextTick = nextTick.then( processItem );
@@ -169,7 +116,7 @@ $(window.document).ready(function () {
       
         // After all translations happened
         nextTick.then(function () {
-            Yoda.translationStack.toggleMiddleElements("hide");
+            YodaTalk.translationStack.toggleMiddleElements("hide");
         });
       
         nextTick.fin(function(result) {
@@ -179,6 +126,5 @@ $(window.document).ready(function () {
         });
         
     }
-    
     
 });

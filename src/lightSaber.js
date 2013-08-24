@@ -1,5 +1,7 @@
+"use strict";
+
 // Light Saber
-(function () {
+(function ($) {
     var colors =  [
         "rgb(255, 255, 255)",   //white
         "rgb(0, 0, 255)",       //blue 
@@ -11,7 +13,10 @@
         "rgb(143, 0, 255)",     //violet
         "rgb(64, 130, 109)"     //viridien - green
     ], LightSaber,
-        root = this;
+    
+        root = this,
+        
+        oldLightSaber = root.LightSaber;
     
     LightSaber = function (element) {
         //document.querySelectorAll(".color_laser").each ... style["color"]="red"
@@ -25,7 +30,17 @@
             if (index == length-1) index = -1;
             $(element).css("color", colors[index+1]);
         }, 5000);            
-    }
+    };
+    
+    
+    // Run LightSaber in noConflict mode, 
+    // returning the LightSaber variable to its previous owner. 
+    // Returns a reference to the LightSaber object.
+    LightSaber.prototype.noConflict = function () {
+        root.LightSaber = oldLightSaber;
+        return this;
+    };
+    
     
     root.LightSaber = LightSaber;
-})();
+}).call(this, jQuery);

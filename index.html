@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="libs/css/boilerplate.css">
         <link rel="stylesheet" href="libs/css/main.css">
         <link rel="stylesheet" href="node_modules/selectoid/lib/selectoid.css">
+        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+        
         <script src="libs/js/modernizr-2.6.2.min.js"></script>
         <script src="libs/js/jquery_1.10.0_min.js"></script>
         <script src="libs/js/languages.js"></script>
@@ -31,12 +33,9 @@
         
         
         <section class="header">
-            <span class="header galaxy">
-                YodaTalk
-            </span>
-            <div class="laser">
-                <sup>____</sup><sup class="color_laser">___________________</sup>
-            </div>
+            <div class="centered preBrand" id="preBrand"></div>
+            <div class="header galaxy outline alt brand centered">{Yod{A</div>
+            <div class="header galaxy outline alt brand bottom centered">tAl]{K</div>
         </section>
         
         <div class="hr"></div>
@@ -44,7 +43,7 @@
         
         <section class="slogan">
             <div class="intro galaxy centered text-centered">
-                Calm You
+                “Calm You
                 <!--<br> -->
                 Shall Keep
                 <br>
@@ -52,8 +51,12 @@
                 <br>
                 Carry On
                 <!--<br>-->
-                You Must
-            </div>    
+                You Must"
+            </div> 
+            <div class="lightSaber">
+                <!--todo: change to Symbol fonts' saber base -->
+                <sup class="base">__</sup><sup class="color_laser">________</sup> 
+            </div>
         </section>
         
             
@@ -69,8 +72,9 @@
                 As you can see now the default translation sequence is: 
                 English &rarr; Japanese &rarr; Swedish &rarr; English.
                 Be sure to try out other combinations of languages. 
-                YodaTalk is language-independent - it works not only with English language.
-                It works in other languages, just because the algorithms we use for translations are not that good yet.
+                YodaTalk is language-independent - wisdom of Master is accessible not only in English.
+                It works in other languages just because the algorithms we use for language translations 
+                are not that good yet.
                 These algorithms make mistakes.
                 Be sure to try different input/output languages if you are a multilingual person.
                 As Master once said: “In a dark place we find ourselves, 
@@ -78,17 +82,28 @@
             </div>
         </section>
         
-        <div class="centered">
-            <button class="translate_button galaxy" >To translate here click you must!</button>
+        
+        <div>
+            <span class="centered">
+                <button class="change_translation galaxy selectedTranslation" data-value="bing">use BiNg to translate</button>
+                <button class="change_translation galaxy" data-value="sangdol">use google to translate</button>
+            </span>
+            
+            <br>
+            
+            <span class="centered">
+                <button class="translate_button galaxy" >To translate here click you must</button>    
+            </span>
         </div>
         
-        
+        <br>
+                
         <ul class="translation_list">
         
             <li id="input" class="element">
                 <div class="conversion">
                     <div class="leftSide">
-                        <div class="selectoid" id="language_input"></div>
+                        <div class="selectoid " data-initial="en"></div>
                     </div>
                     <div id="input_text" contenteditable="true" class="conversion_div">
                         I like to swim in a blue ocean. 
@@ -99,35 +114,41 @@
                 </div>
             </li>
             
-            <li class="add_element"></li>
+            <li class="add_element">
+                <i class="icon-plus-sign icon-4"></i>&nbsp;<span class="galaxy">Add another</span>
+            </li>
             
             <li class="element">
                 <div class="yoda relative"></div>
                 <div class="conversion">
                     <div class="leftSide">
-                        <div class="selectoid language" id="one"></div>
+                        <div class="selectoid language" data-initial="ja"></div>
                         <br>
-                        <button class="galaxy remove">remove</button>
+                        <button class="galaxy remove"><i class="icon-minus-sign"></i>&nbsp;remove</button>
                     </div>
                     <div class="conversion_div"></div>    
                 </div>
             </li>
             
-            <li class="add_element"></li>
+            <li class="add_element">
+                <i class="icon-plus-sign icon-4"></i>&nbsp;<span class="galaxy">Add another</span>
+            </li>
             
             <li class="element">
                 <div class="yoda relative"></div>
                 <div class="conversion">
                     <div class="leftSide">
-                        <div class="selectoid language" id="two"></div>
+                        <div class="selectoid language" data-initial="sv"></div>
                         <br>
-                        <button class="galaxy remove">remove</button>
+                        <button class="galaxy remove"><i class="icon-minus-sign"></i>&nbsp;remove</button>
                     </div>
                     <div class="conversion_div"></div>    
                 </div>
             </li>
             
-            <li class="add_element"></li>
+            <li class="add_element">
+                <i class="icon-plus-sign icon-4"></i>&nbsp;<span class="galaxy">Add another</span>
+            </li>
             
             <li>
                 <button class="toggle_elements galaxy">... show all translations ...</button>
@@ -136,35 +157,65 @@
             <li id="output" class="element">
                 <div class="yoda relative"></div>
                 <div class="conversion">
-                    <div class="selectoid language" id="language_output"></div>
+                    <div class="leftSide">
+                        <div class="selectoid language" data-initial="en"></div>
+                    </div>
                     <div id="output_text" class="conversion_div"></div>
                 </div>
             </li>
             
         </ul>
         
-        <div class="centered">
-            <button class="translate_button galaxy" >To translate here click you must!</button>
+        <br>
+        <div style="clear:both"></div>
+        
+        <div>
+            <span class="centered">
+                <button class="translate_button galaxy" >To translate here click you must</button>
+            </span>
         </div>
         
         <section class="details">
             <div class="main centered three_columns">
-                As you probably already know, YodaTalk does not shift words around to make it
-                seem as if Master Yoda was talking. If you are looking for that, the <a href="http://www.yodaspeak.co.uk" class="galaxy link yoda_speak" target="_blank">YodaSpeak</a>
-                is a tool that will help you.
+                <span class="galaxy outpline">YodaTalk</span> <i>does not shift words around</i> to make it
+                seem as if Master Yoda was talking. It only uses modern translation services. If you are looking for shifting words around, however, 
+                the <a href="http://www.yodaspeak.co.uk" class="galaxy link yoda_speak" target="_blank">YodaSpeak</a>
+                is a tool that might be of help to you. And may the force be with you.
             </div>
         </section>
+        
+        <br>
+        <br>
         
         <div class="centered qr">
             <img src="libs/img/qr.png" width="100px" height="100px" class="centered" />
         </div>
+        
+        <br>
+        <br>
         
         <div class="hr"></div>
         
         <footer>
             <p class="centered">
                 designed & developed by 
+                <br>
                 <a href="https://github.com/gogromat/" target="_blank" class="galaxy link">GogromaT</a>
+                <br>
+                <a href="https://plus.google.com/116898228043449492263/posts" class="link contact">
+                    <i class="icon-google-plus-sign icon-4"></i>
+                </a>
+                <a href="https://github.com/gogromat/" target="_blank" class="link contact">
+                    <i class="icon-github-sign icon-4"></i>
+                </a>
+                <a href="https://twitter.com/Astafurov_Alex" target="_blank" class="link contact">
+                    <i class="icon-twitter-sign icon-4"></i>
+                </a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <script data-gittip-username="gogromat" src="https://www.gittip.com/assets/widgets/0002.js"></script>
             </p>
         </footer>
         
@@ -180,17 +231,39 @@
         <!-- Free google's translator using spreadsheets (author: Sangdol) -->
         <script src="src/sangdolTranslator.js"></script>
         
+        <!-- Free Microsoft Bing Translator -->
+        <script src="src/bingTranslator.js"></script>
+        
         <!-- Progress Bar. Yoda Progress Bar -->
         <script src="src/yodaProgress.js"></script>
         
         <!-- Mimics human typing of text -->
         <script src="src/teletype.js"></script>        
         
+        <!-- Object that holds language sets -->
+        <script src="src/yodaLanguageSet.js"></script>   
+        
         <!-- Yoda html stack -->
         <script src="src/yodaStack.js"></script>
         
         <!--Main SRC file-->
         <script src="src/yodaTalk.js"></script>
+        
+        <script>
+            console.clear();
+            
+            var root = this;
+            
+            $(document).ready(function () {
+                
+                // Activate Teletype and type in Star Wars opening
+                root.Teletype("#preBrand", "A long time ago in a galaxy far, far away....", 100);
+                
+                // Activate Light Saber
+                root.LightSaber(".color_laser");                
+            });
+        </script>
+        
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
