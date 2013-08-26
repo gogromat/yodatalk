@@ -2,10 +2,10 @@
    
     var root = this,
     
-        SangdolTranslator;
+        MyMemoryTranslator;
         
     
-    SangdolTranslator = function () {
+    MyMemoryTranslator = function () {
     
         var self = this;
         
@@ -24,22 +24,22 @@
             self.to = to;
         };
         self.getBaseUrl = function () {
-            return "http://google-translate-api.herokuapp.com/translate?callback=cb";
+            return "http://api.mymemory.translated.net/get?of=json&de=gogromat@gmail.com";
         };
         self.getFromLangArg = function () {
-            return "&from=" + self.from;
+            return "&langpair=" + self.from;
         };
         self.getToLangArg = function () {
-            return "&to=" + self.to;
+            return "|" + self.to;
         };
         self.getTextArg = function () {
-            return "&text[]=" + self.text;
+            return "&q=" + self.text;
         };
         self.getUrl = function () {
             return self.getBaseUrl() +
                 self.getTextArg() +
                 self.getFromLangArg() +
-                self.getToLangArg();   
+                self.getToLangArg();
         };
         self.getResultObj = function (jqXHR) {
             //console.log("jqXHR Result: ",jqXHR, jqXHR[self.text]);
@@ -47,20 +47,20 @@
                 "from": self.from,
                 "to": self.to,
                 "text": self.text,
-                "result": fixText(jqXHR[self.text])
+                "result": fixText(jqXHR.responseData.translatedText)
             };
         };
         
         self.ajaxCall = function () {
-            console.log("Sangdol!", "URL: ", self.getUrl());
+            console.log("MyMemory!", "URL: ", self.getUrl());
             return $.ajax({
                 url: self.getUrl(),
-                dataType: 'jsonp',
+                dataType: 'json',
                 scriptCharset: "utf-8"
             });
         };  
     };
     
-    root.SangdolTranslator = SangdolTranslator;
+    root.MyMemoryTranslator = MyMemoryTranslator;
     
 }).call(this, jQuery);

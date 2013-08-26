@@ -2,10 +2,9 @@
    
     var root = this,
     
-        SangdolTranslator;
-        
+        StichozaTranslator;
     
-    SangdolTranslator = function () {
+    StichozaTranslator = function () {
     
         var self = this;
         
@@ -18,13 +17,13 @@
         };
     
         self.setTranslations = function (text, from, to) {
-            //console.log("Setting TEXT:", text, "Setting FROM/TO:", from, to);
+            console.log("Setting TEXT:", text, "Setting FROM/TO:", from, to);
             self.text = text;
             self.from = from;
             self.to = to;
         };
         self.getBaseUrl = function () {
-            return "http://google-translate-api.herokuapp.com/translate?callback=cb";
+            return "google/translator.php";
         };
         self.getFromLangArg = function () {
             return "&from=" + self.from;
@@ -33,34 +32,36 @@
             return "&to=" + self.to;
         };
         self.getTextArg = function () {
-            return "&text[]=" + self.text;
+            return "?text=" + self.text;
         };
         self.getUrl = function () {
             return self.getBaseUrl() +
                 self.getTextArg() +
                 self.getFromLangArg() +
-                self.getToLangArg();   
+                self.getToLangArg(); 
         };
         self.getResultObj = function (jqXHR) {
-            //console.log("jqXHR Result: ",jqXHR, jqXHR[self.text]);
+            console.log("jqXHR Result: ",jqXHR, jqXHR.result);
             return {
                 "from": self.from,
                 "to": self.to,
                 "text": self.text,
-                "result": fixText(jqXHR[self.text])
+                "result": fixText(jqXHR.result)
             };
         };
         
         self.ajaxCall = function () {
-            console.log("Sangdol!", "URL: ", self.getUrl());
+            console.log("Stichoza!", "URL: ", self.getUrl());
             return $.ajax({
                 url: self.getUrl(),
-                dataType: 'jsonp',
+                dataType: 'json',
                 scriptCharset: "utf-8"
             });
         };  
     };
     
-    root.SangdolTranslator = SangdolTranslator;
+    root.StichozaTranslator = StichozaTranslator;
     
 }).call(this, jQuery);
+
+$.fn.StichozaTranslator = this.StichozaTranslator;

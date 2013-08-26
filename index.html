@@ -10,8 +10,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         <link rel="stylesheet" href="libs/css/normalize.css">
         <link rel="stylesheet" href="libs/css/boilerplate.css">
         <link rel="stylesheet" href="libs/css/main.css">
@@ -24,13 +22,13 @@
         <script src="node_modules/selectoid/lib/selectoid.js"></script>
     </head>
     <body>
+    
         <!--[if lt IE 7]>
             <p class="chromeframe">
                 You are using an <strong>outdated</strong> browser. 
                 Please <a href="http://browsehappy.com/">upgrade your browser</a> or 
                 <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-        
         
         <section class="header">
             <div class="centered preBrand" id="preBrand"></div>
@@ -40,17 +38,14 @@
         
         <div class="hr"></div>
         
-        
         <section class="slogan">
             <div class="intro galaxy centered text-centered">
                 “Calm You
-                <!--<br> -->
                 Shall Keep
                 <br>
                 And
                 <br>
                 Carry On
-                <!--<br>-->
                 You Must"
             </div> 
             <div class="lightSaber">
@@ -68,18 +63,19 @@
                 <br>
                 Do you want to see how it is difficult to translate human languages?
                 Even the Grand Master have problems keeping up with the meaning. 
-                Try YodaTalk, and see for yourself. 
+                Try YodaTalk, and see for yourself.
                 Just choose different languages, so the translation will be more Yoda-talk-like.
                 As you can see now the default translation sequence is: 
                 English &rarr; Japanese &rarr; Swedish &rarr; English.
                 Be sure to try out other combinations of languages. 
                 YodaTalk is language-independent - wisdom of Master is accessible not only in English.
                 It works in other languages just because the algorithms we use for language translations 
-                are not that good yet.
-                These algorithms make mistakes.
+                are not that good yet. 
+                These algorithms have a hard time tranlating human languages.
                 Be sure to try different input/output languages if you are a multilingual person.
-                As Master once said: “In a dark place we find ourselves, 
-                and a little more knowledge lights our way.”
+                Always keep in mind punctuation symbols and place them accordingly, whether its a period or a comma. 
+                Put a single space between sentences. This may help translation engines to produce a better quality translation.
+                As Master once said: “In a dark place we find ourselves, and a little more knowledge lights our way.”
             </div>
         </section>
         
@@ -88,8 +84,10 @@
         
         <div>
             <span class="centered">
-                <button class="change_translation galaxy selectedTranslation" data-value="bing">use BiNg to translate</button>
-                <button class="change_translation galaxy" data-value="sangdol">use google to translate</button>
+                <button class="change_translation galaxy selectedTranslation" data-value="bing"> BiNg </button>
+                <button class="change_translation galaxy" data-value="stichoza">google (fast)</button>
+                <button class="change_translation galaxy" data-value="sangdol">google (slow)</button>
+                <button class="change_translation galaxy" data-value="mymem">MyMemory</button>
             </span>
             
             <br>
@@ -153,7 +151,7 @@
                 <i class="icon-plus-sign icon-4"></i>&nbsp;<span class="galaxy">Add another</span>
             </li>
             
-            <li>
+            <li class="toggle_elements_li">
                 <button class="toggle_elements galaxy">... show all translations ...</button>
             </li>
             
@@ -234,8 +232,14 @@
         <!-- Free google's translator using spreadsheets (author: Sangdol) -->
         <script src="src/sangdolTranslator.js"></script>
         
+        <!-- Free google's translator using spreadsheets (author: Stichoza) -->
+        <script src="src/stichozaTranslator.js"></script>
+        
         <!-- Free Microsoft Bing Translator -->
         <script src="src/bingTranslator.js"></script>
+        
+        <!-- Free MyMemory Translator -->
+        <script src="src/MyMemoryTranslator.js"></script>
         
         <!-- Progress Bar. Yoda Progress Bar -->
         <script src="src/yodaProgress.js"></script>

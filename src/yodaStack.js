@@ -308,7 +308,9 @@
         });
         
         if (action == "hide") {
+            
             $(self.options.toggleElements).css("display", "block");
+            
         } else {
             $(self.options.toggleElements).hide();
         }

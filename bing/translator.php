@@ -1,15 +1,16 @@
 <?php
 /**
- * This file will retuen JSON response
+ * This file will return JSON response
  */
+require_once('../helpers/form_helpers.php');
 require_once('config.inc.php');
-//require_once('class/ServicesJSON.class.php');
 require_once('class/MicrosoftTranslator.class.php');
 
+$from = filter_text($_REQUEST['from']);
+$to   = filter_text($_REQUEST['to']);
+$text = filter_text($_REQUEST['text']);
+
 $translator = new MicrosoftTranslator(ACCOUNT_KEY);
-$text_to_translate = $_REQUEST['text'];
-$to = $_REQUEST['to'];
-$from = $_REQUEST['from'];
-$translator->translate($from, $to, $text_to_translate);
+$translator->translate($from, $to, $text);
 echo $translator->response->jsonResponse;
 ?>

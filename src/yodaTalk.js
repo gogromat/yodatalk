@@ -34,7 +34,11 @@ $(window.document).ready(function () {
         if (translator === "bing") {
             root.YodaCurrentLanguageSet.setLanguageSet("bing");
         } else if (translator === "sangdol") {
-            root.YodaCurrentLanguageSet.setLanguageSet("google");   
+            root.YodaCurrentLanguageSet.setLanguageSet("sangdol");   
+        } else if (translator === "stichoza") {
+            root.YodaCurrentLanguageSet.setLanguageSet("stichoza");   
+        } else if (translator === "mymem") {
+            root.YodaCurrentLanguageSet.setLanguageSet("mymem");   
         }
         
         YT.translationStack.restart();
@@ -81,7 +85,6 @@ $(window.document).ready(function () {
             console.log("YodaTalk: Progress: ", progress);
         });
           
-          
         return textFillInPromise.then(function(result) {
             console.log("YodaTalk: Result: ",result);
         }, function (error) {
@@ -89,7 +92,7 @@ $(window.document).ready(function () {
         }, function (progress) {
             
             var YodaProgressElement = YodaTalk.translationStack.getCurrent().progress;
-            if (!YodaProgressElement) return;
+            if (!YodaProgressElement || !YodaProgressElement.progress) return;
             YodaProgressElement.progress(parseFloat(progress));
             if (YodaProgressElement.isDone()) YodaTalk.translationStack.deferred.resolve();
             //console.log("Progress %:", progress);
@@ -105,7 +108,6 @@ $(window.document).ready(function () {
         function processItem(prevResult) {
             return obtainAjaxPromise(prevResult, YodaTalk);
         }
-        
       
         var nextTick = Q.when(),
             length = YodaTalk.translationStack.getStackSize();
@@ -117,6 +119,13 @@ $(window.document).ready(function () {
         // After all translations happened
         nextTick.then(function () {
             YodaTalk.translationStack.toggleMiddleElements("hide");
+        });
+        
+        // Scroll to the top of translation stack
+        nextTick.then(function () {
+           $('html, body').animate({
+                scrollTop: YodaTalk.translationStack.stack[0].textElement.offset().top - 150
+            }, 1500);
         });
       
         nextTick.fin(function(result) {

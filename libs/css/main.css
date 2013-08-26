@@ -10,6 +10,10 @@
     padding: 20px 5px;
 }
 
+.translation_list li.toggle_elements_li {
+    padding: 0;
+}
+
 .translation_list div.conversion {
     min-height: 106px;
     border: dashed 1px #F1F1F1;
@@ -37,6 +41,8 @@
     background-color: #F5F5F5;
     cursor: cell;
 }
+
+
 
 
 button.remove {
@@ -222,10 +228,16 @@ section.header {
 }
 @media all and (max-width: 850px) and (min-width: 641px) {
     .conversion_div {
-        width: 75%;
+        width: 65%;
+    }
+    .leftSide {
+        width: 30%;
     }
 }
 @media all and (max-width: 640px) and (min-width: 0px) {
+    span.centered {
+        width: 100% !important;
+    }
     .leftSide {
         width: 100%;
     }
@@ -252,6 +264,9 @@ section.header {
     button.change_translation, button.translate_button {
         width: 100%;
         margin-top: 3px;
+    }
+    .translate_button {
+        height: auto;
     }
 }
 

@@ -3,7 +3,8 @@ var Languages =  {
     languages : [
         {
             "abbreviation": {
-                "gt": "af"
+                "gt": "af",
+                "RFC3066": "af-ZA"
             },
             "name": "Afrikaans",
             "native_name": "Afrikaans",
@@ -11,7 +12,8 @@ var Languages =  {
         },
         {
             "abbreviation": {
-                "gt": "sq"
+                "gt": "sq",
+                "RFC3066": "sq-AL"
             },
             "name": "Albanian",
             "native_name": "Shqiptar",
@@ -19,8 +21,15 @@ var Languages =  {
         },
         {
             "abbreviation": {
+                "RFC3066": "am-AM"
+            },
+            "name": "Amharic"
+        },
+        {
+            "abbreviation": {
                 "gt": "ar",
-                "bt": "ar"
+                "bt": "ar",
+                "RFC3066": "ar-SA"
             },
             "name": "Arabic",
             "greeting": "مرحبا",
@@ -28,73 +37,125 @@ var Languages =  {
         },
         {
             "abbreviation": {
-                "gt": "hy"
+                "gt": "hy",
+                "RFC3066": "hy-AM"
             },
             "name": "Armenian",
             "greeting": "Բարեւ Ձեզ"
         },
         {
             "abbreviation": {
-                "gt": "az"
+                "gt": "az",
+                "RFC3066": "az-AZ"
             },
             "name": "Azerbaijani",
             "greeting": "Salam"
         },
         {
             "abbreviation": {
-                "gt": "eu"
+                "RFC3066": "bjs-BJS"
+            },
+            "name": "Bajan"            
+        },
+        {
+            "abbreviation": {
+                "RFC3066": "rm-RO"
+            },
+            "name": "Balkan Gipsy"            
+        },
+        {
+            "abbreviation": {
+                "gt": "eu",
+                "RFC3066": "eu-ES"
             },
             "name": "Basque",
             "greeting": "Kaixo"
         },
         {
             "abbreviation": {
-                "gt": "be"
+                "RFC3066": "bem-BEM"
+            },
+            "name": "Bemba"
+        },
+        {
+            "abbreviation": {
+                "gt": "be",
+                "RFC3066": "be-BY"
             },
             "name": "Belarusian",
             "greeting": "Прывітанне"
         },
         {
             "abbreviation": {
-                "gt": "bn"
+                "gt": "bn",
+                "RFC3066": "bn-IN"
             },
             "name": "Bengali",
             "greeting": "হ্যালো"
         },
         {
             "abbreviation": {
-                "gt": "bs"
+                "RFC3066": "bi-BI"
+            },
+            "name": "Bislama"
+        },
+        {
+            "abbreviation": {
+                "gt": "bs",
+                "RFC3066": "bs-BA"
             },
             "name": "Bosnian",
             "greeting": "Halo"
         },
         {
             "abbreviation": {
+                "RFC3066": "br-FR"
+            },
+            "name": "Breton",
+        },
+        {
+            "abbreviation": {
                 "gt": "bg",
-                "bt":"bg"
+                "bt":"bg",
+                "RFC3066": "bg-BG"
             },
             "name": "Bulgarian",
             "greeting": "Здравейте"
         },
         {
             "abbreviation": {
+                "RFC3066": "my-MM"
+            },
+            "name": "Burmese",
+        },
+        {
+            "abbreviation": {
                 "gt": "ca",
-                "bt": "ca"
+                "bt": "ca",
+                "RFC3066": "ca-ES"
             },
             "name": "Catalan",
             "greeting": "Hola"
         },
         {
             "abbreviation": {
-                "gt": "ceb"
+                "gt": "ceb",
+                "RFC3066": "cb-PH"
             },
             "name": "Cebuano",
             "greeting": "Hello"
         },
         {
             "abbreviation": {
+                "RFC3066": "ch-CH"
+            },
+            "name": "Chamorro"
+        },        
+        {
+            "abbreviation": {
                 "gt": "zh-cn",
-                "bt": "zh-CHS"
+                "bt": "zh-CHS",
+                "RFC3066": "zh-CN"
             },
             "name": "Chinese (Simplified)",
             "greeting": "你好"
@@ -102,14 +163,94 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "zh-tw",
-                "bt": "zh-CHT"
+                "bt": "zh-CHT",
+                "RFC3066": "zh-TW"
             },
             "name": "Chinese (Traditional)",
             "greeting": "你好"
         },
         {
             "abbreviation": {
-                "gt": "hr"
+                "RFC3066": "zdj-ZDJ"
+            },
+            "name": "Comorian (Ngazidja)"
+        },
+        {
+			"abbreviation": {
+				"RFC3066": "cop-XNA"
+			},
+			"name": "Coptic"
+		},
+        {
+			"abbreviation": {
+				"RFC3066": "aig-AIG"
+			},
+			"name": "Creole English (Antigua and Barbuda)" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "bah-BAH"
+			},
+			"name": "Creole English (Bahamas)" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "gcl-GCL"
+			},
+			"name": "Creole English (Grenadian)" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "gyn-GYN"
+			},
+			"name": "Creole English (Guyanese)" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "xx-JM"
+			},
+			"name": "Creole English (Jamaican)"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "svc-SVC"
+			},
+			"name": "Creole English (Vincentian)"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "vic-VIC"
+			},
+			"name": "Creole English (Virgin Islands)"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "ht-HT"
+			},
+			"name": "Creole French (Haitian)" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "acf-ACF"
+			},
+			"name": "Creole French (Saint Lucian)"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "crs-CRS"
+			},
+			"name": "Creole French (Seselwa)"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "pov-POV"
+			},
+			"name": "Creole Portuguese (Upper Guinea)"
+		},
+        {
+            "abbreviation": {
+                "gt": "hr",
+                "RFC3066": "hr-HR"
             },
             "name": "Croatian",
             "greeting": "Halo"
@@ -125,7 +266,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "da",
-                "bt": "da"
+                "bt": "da",
+                "RFC3066": "da-DK"
             },
             "name": "Danish",
             "greeting": "Hej"
@@ -133,15 +275,23 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "nl",
-                "bt": "nl"
+                "bt": "nl",
+                "RFC3066": "nl-NL"
             },
             "name": "Dutch",
             "greeting": "Hallo"
         },
         {
+			"abbreviation": {
+				"RFC3066": "dz-DZ"
+			},
+			"name": "Dzongkha"
+		},
+        {
             "abbreviation": {
                 "gt": "en",
-                "bt": "en"
+                "bt": "en",
+                "RFC3066": "en-GB"
             },
             "name": "English",
             "native_name": "English",
@@ -149,7 +299,8 @@ var Languages =  {
         },
         {
             "abbreviation": {
-                "gt": "eo"
+                "gt": "eo",
+                "RFC3066": "eo-XN"
             },
             "name": "Esperanto",
             "greeting": "Saluton"
@@ -157,11 +308,24 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "et",
-                "bt": "et"
+                "bt": "et",
+                "RFC3066": "et-EE"
             },
             "name": "Estonian",
             "greeting": "Tere"
         },
+        {
+			"abbreviation": {
+				"RFC3066": "fn-FNG"
+			},
+			"name": "Fanagalo"
+		},
+        {
+			"abbreviation": {
+				"RFC3066": "fo-FO"
+			},
+			"name": "Faroese"
+		},
         {
             "abbreviation": {
                 "gt": "tl"
@@ -172,7 +336,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "fi",
-                "bt": "fi"
+                "bt": "fi",
+                "RFC3066": "fi-FI"
             },
             "name": "Finnish",
             "greeting": "Hei"
@@ -180,21 +345,24 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "fr",
-                "bt": "fr"
+                "bt": "fr",
+                "RFC3066": "fr-FR"
             },
             "name": "French",
             "greeting": "Bonjour"
         },
         {
             "abbreviation": {
-                "gt": "gl"
+                "gt": "gl",
+                "RFC3066": "gl-ES"
             },
             "name": "Galician",
             "greeting": "Ola"
         },
         {
             "abbreviation": {
-                "gt": "ka"
+                "gt": "ka",
+                "RFC3066": "ka-GE"
             },
             "name": "Georgian",
             "greeting": "გაუმარჯოს"
@@ -202,7 +370,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "de",
-                "bt": "de"
+                "bt": "de",
+                "RFC3066": "de-DE"
             },
             "name": "German",
             "greeting": "Hallo"
@@ -210,14 +379,22 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "el",
-                "bt": "el"
+                "bt": "el",
+                "RFC3066": "el-GR"
             },
             "name": "Greek",
             "greeting": "Γεια σας"
         },
         {
+			"abbreviation": {
+				"RFC3066": "XN-GR"
+			},
+			"name": "Greek (Classical)"
+		},
+        {
             "abbreviation": {
-                "gt": "gu"
+                "gt": "gu",
+                "RFC3066": "gu-IN"
             },
             "name": "Gujarati",
             "greeting": "હેલો"
@@ -233,16 +410,30 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "he",
-                "bt": "he"
+                "bt": "he",
+                "RFC3066": "he-IL"
             },
             "name": "Hebrew",
             "greeting": "שלום",
             "side": "right"
         },
         {
+			"abbreviation": {
+				"RFC3066": "XN-US"
+			},
+			"name": "Hawaiian"
+		},
+        {
+			"abbreviation": {
+				"RFC3066": "ha-HA"
+			},
+			"name": "Hausa" 
+		},
+        {
             "abbreviation": {
                 "gt": "hi",
-                "bt": "hi"
+                "bt": "hi",
+                "RFC3066": "hi-IN"
             },
             "name": "Hindi",
             "greeting": "नमस्त",
@@ -260,14 +451,16 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "hu",
-                "bt": "hu"
+                "bt": "hu",
+                "RFC3066": "hu-HU"
             },
             "name": "Hungarian",
             "greeting": "Helló"
         },
         {
             "abbreviation": {
-                "gt": "is"
+                "gt": "is",
+                "RFC3066": "is-IS"
             },
             "name": "Icelandic",
             "greeting": "Halló"
@@ -275,14 +468,22 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "id",
-                "bt": "id"
+                "bt": "id",
+                "RFC3066": "id-ID"
             },
             "name": "Indonesian",
             "greeting": "Halo"
         },
         {
+			"abbreviation": {
+				"RFC3066": "kl-KL"
+			},
+			"name": "Inuktitut (Greenlandic)" 
+		},
+        {
             "abbreviation": {
-                "gt": "ga"
+                "gt": "ga",
+                "RFC3066": "ga-IE"
             },
             "name": "Irish",
             "greeting": "Dia duit"
@@ -290,7 +491,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "it",
-                "bt": "it"
+                "bt": "it",
+                "RFC3066": "it-IT"
             },
             "name": "Italian",
             "greeting": "Ciao"
@@ -298,50 +500,105 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "ja",
-                "bt": "ja"
+                "bt": "ja",
+                "RFC3066": "ja-JA"
             },
             "name": "Japanese",
             "greeting": "こんにちは"
         },
         {
             "abbreviation": {
-                "gt": "jw"
+                "gt": "jw",
+                "RFC3066": "jw-ID"
             },
             "name": "Javanese",
             "greeting": "Hello"
         },
         {
+			"abbreviation": {
+				"RFC3066": "kea-KEA"
+			},
+			"name": "Kabuverdianu" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "kab-DZ"
+			},
+			"name": "Kabylian" 
+		},
+        {
             "abbreviation": {
-                "gt": "kn"
+                "gt": "kn",
+                "RFC3066": "ka-IN"
             },
             "name": "Kannada",
             "greeting": "ಹಲೋ"
         },
         {
+			"abbreviation": {
+				"RFC3066": "kk-KZ"
+			},
+			"name": "Kazakh"
+		},
+        {
             "abbreviation": {
-                "gt": "km"
+                "gt": "km",
+                "RFC3066": "km-KM"
             },
             "name": "Khmer",
             "greeting": "ជំរាបសួរ"
         },
         {
+			"abbreviation": {
+				"RFC3066": "rw-RW"
+			},
+			"name": "Kinyarwanda"
+		},
+        {
+			"abbreviation": {
+				"RFC3066": "rn-RN"
+			},
+			"name": "Kirundi"
+		},
+        {
             "abbreviation": {
                 "gt": "ko",
-                "bt": "ko"
+                "bt": "ko",
+                "RFC3066": "ko-KR"
             },
             "name": "Korean",
             "greeting": "안녕하세요"
         },
         {
+			"abbreviation": {
+				"RFC3066": "ku-TR"
+			},
+			"name": "Kurdish"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "ku-TR"
+			},
+			"name": "Kurdish Sorani"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "ky-KY"
+			},
+			"name": "Kyrgyz"
+		},
+        {
             "abbreviation": {
-                "gt": "lo"
+                "gt": "lo",
+                "RFC3066": "lo-LO"
             },
             "name": "Lao",
             "greeting": "ສະບາຍດີ"
         },
         {
             "abbreviation": {
-                "gt": "la"
+                "gt": "la",
+                "RFC3066": "la-XN"
             },
             "name": "Latin",
             "greeting": "Salve"
@@ -349,7 +606,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "lv",
-                "bt": "lv"
+                "bt": "lv",
+                "RFC3066": "lv-LV"
             },
             "name": "Latvian",
             "greeting": "Sveiki"
@@ -357,29 +615,51 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "lt",
-                "bt": "lt"
+                "bt": "lt",
+                "RFC3066": "lt-LT"
             },
             "name": "Lithuanian",
             "greeting": "Sveiki"
         },
         {
+			"abbreviation": {
+				"RFC3066": "lb-LB"
+			},
+			"name": "Luxembourgish"
+		},
+        {
             "abbreviation": {
-                "gt": "mk"
+                "gt": "mk",
+                "RFC3066": "mk-MK"
             },
             "name": "Macedonian",
             "greeting": "Здраво"
         },
         {
             "abbreviation": {
+				"RFC3066": "mg-MG"
+			},
+			"name": "Malagasy" 
+		},
+        {
+            "abbreviation": {
                 "gt": "ms",
-                "bt": "ms"
+                "bt": "ms",
+                "RFC3066": "ms-MY"
             },
             "name": "Malay",
             "greeting": "Hello"
         },
         {
+			"abbreviation": {
+				"RFC3066": "dv-DV"
+			},
+			"name": "Maldivian"
+		},
+        {
             "abbreviation": {
-                "gt": "mt"
+                "gt": "mt",
+                "RFC3066": "mt-MT"
             },
             "name": "Maltese",
             "greeting": "Hello"
@@ -392,42 +672,150 @@ var Languages =  {
             "greeting": "हॅलो"
         },
         {
+			"abbreviation": {
+				"RFC3066": "gv-IM"
+			},
+			"name": "Manx Gaelic"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "mi-NZ"
+			},
+			"name": "Maori"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "mh-MH"
+			},
+			"name": "Marshallese" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "men-MEN"
+			},
+			"name": "Mende" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "mn-MN"
+			},
+			"name": "Mongolian"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "mfe-MFE"
+			},
+			"name": "Morisyen"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "ne-NP"
+			},
+			"name": "Nepali" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "niu-NIU"
+			},
+			"name": "Niuean" 
+		},
+        {
             "abbreviation": {
                 "gt": "no",
-                "bt": "no"
+                "bt": "no",
+                "RFC3066": "no-NO"
             },
             "name": "Norwegian",
             "greeting": "Hallo"
         },
         {
+			"abbreviation": {
+				"RFC3066": "ny-NY"
+			},
+			"name": "Nyanja" 
+		},
+        {
             "abbreviation": {
                 "gt": "fa",
-                "bt": "fa"
+                "bt": "fa",
+                "RFC3066": "fa-IR"
             },
             "name": "Persian",
             "greeting": "سلام",
             "side": "right"
         },
         {
+			"abbreviation": {
+				"RFC3066": "pis-PIS"
+			},
+			"name": "Pijin" 
+		},
+        {
             "abbreviation": {
                 "gt": "pl",
-                "bt": "pl"
+                "bt": "pl",
+                "RFC3066": "pl-PL"
             },
             "name": "Polish",
             "greeting": "Halo"
         },
         {
+			"abbreviation": {
+				"RFC3066": "ur-PK"
+			},
+			"name": "Pakistani"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "pau-PAU"
+			},
+			"name": "Palauan" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "pa-IN"
+			},
+			"name": "Panjabi" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "pap-PAP"
+			},
+			"name": "Papiamentu" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "ps-PK"
+			},
+			"name": "Pashto" 
+		},
+        {
             "abbreviation": {
                 "gt": "pt",
-                "bt": "pt"
+                "bt": "pt",
+                "RFC3066": "pt-PT"
             },
             "name": "Portuguese",
             "greeting": "Olá"
         },
+
+    	{
+			"abbreviation": {
+				"RFC3066": "pot-US"
+			},
+			"name": "Potawatomi"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "qu-XN"
+			},
+			"name": "Quechua"
+		},
         {
             "abbreviation": {
                 "gt": "ro",
-                "bt": "ro"
+                "bt": "ro",
+                "RFC3066": "ro-RO"
             },
             "name": "Romanian",
             "greeting": "Alo"
@@ -435,15 +823,35 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "ru",
-                "bt": "ru"
+                "bt": "ru",
+                "RFC3066": "ru-RU"
             },
             "name": "Russian",
             "native_name": "Русский",
             "greeting": "Привет"
         },
+    	{
+			"abbreviation": {
+				"RFC3066": "sm-SM"
+			},
+			"name": "Samoan" 
+		},
+        {
+			"abbreviation": {
+				"RFC3066": "sg-SG"
+			},
+			"name": "Sango" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "gd-GB"
+			},
+			"name": "Scots Gaelic"
+		},
         {
             "abbreviation": {
-                "gt": "sr"
+                "gt": "sr",
+                "RFC3066": "sr-RS"
             },
             "name": "Serbian",
             "greeting": "Здраво",
@@ -451,8 +859,21 @@ var Languages =  {
         },
         {
             "abbreviation": {
+				"RFC3066": "sn-SN"
+			},
+			"name": "Shona"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "si-LK"
+			},
+			"name": "Sinhala"
+		},
+        {
+            "abbreviation": {
                 "gt": "sk",
-                "bt": "sk"
+                "bt": "sk",
+                "RFC3066": "sk-SK"
             },
             "name": "Slovak",
             "greeting": "Ahoj"
@@ -460,22 +881,43 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "sl",
-                "bt": "sl"
+                "bt": "sl",
+                "RFC3066": "sl-SI"
             },
             "name": "Slovenian",
             "greeting": "Pozdravljeni"
         },
         {
             "abbreviation": {
+				"RFC3066": "so-SO"
+			},
+			"name": "Somali" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "st-ST"
+			},
+			"name": "Sotho" 
+		},
+        {
+            "abbreviation": {
                 "gt": "es",
-                "bt": "es"
+                "bt": "es",
+                "RFC3066": "es-ES"
             },
             "name": "Spanish",
             "greeting": "¡Hola"
         },
         {
+			"abbreviation": {
+				"RFC3066": "srn-SRN"
+			},
+			"name": "Sranan Tongo"
+		},
+        {
             "abbreviation": {
-                "gt": "sw"
+                "gt": "sw",
+                "RFC3066": "sw-SZ"
             },
             "name": "Swahili",
             "greeting": "Hujambo"
@@ -483,45 +925,135 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "sv",
-                "bt": "sv"
+                "bt": "sv",
+                "RFC3066": "sv-SE"
             },
             "name": "Swedish",
             "greeting": "Hallå"
         },
         {
+			"abbreviation": {
+				"RFC3066": "de-CH"
+			},
+			"name": "Swiss German"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "syc-TR"
+			},
+			"name": "Syriac (Aramaic)"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "tl-PH"
+			},
+			"name": "Tagalog"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "tg-TJ"
+			},
+			"name": "Tajik"
+		},
+        {
+			"abbreviation": {
+				"RFC3066": "tmh-DZ"
+			},
+			"name": "Tamashek (Tuareg)"
+		},
+        {
             "abbreviation": {
-                "gt": "ta"
+                "gt": "ta",
+                "RFC3066": "ta-LK"
             },
             "name": "Tamil",
             "greeting": "வணக்கம்"
         },
         {
             "abbreviation": {
-                "gt": "te"
+                "gt": "te",
+                "RFC3066": "te-IN"
             },
             "name": "Telugu",
             "greeting": "దూరంగా ఉండేవారిని పిలుచుటకు వాడే ఓ శబ్ధ విశేషము"
         },
         {
+			"abbreviation": {
+				"RFC3066": "tet-TET"
+			},
+			"name": "Tetum"
+		},
+        {
             "abbreviation": {
                 "gt": "th",
-                "bt": "th"
+                "bt": "th",
+                "RFC3066": "th-TH"
             },
             "name": "Thai",
             "greeting": "สวัสดี"
         },
         {
+			"abbreviation": {
+				"RFC3066": "bo-CN"
+			},
+			"name": "Tibetan"
+		},
+        {
+			"abbreviation": {
+				"RFC3066": "ti-TI"
+			},
+			"name": "Tigrinya"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "tpi-TPI"
+			},
+			"name": "Tok Pisin"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "tkl-TKL"
+			},
+			"name": "Tokelauan"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "to-TO"
+			},
+			"name": "Tongan" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "tn-TN"
+			},
+			"name": "Tswana" 
+		},
+        {
             "abbreviation": {
                 "gt": "tr",
-                "bt": "tr"
+                "bt": "tr",
+                "RFC3066": "tr-TR"
             },
             "name": "Turkish",
             "greeting": "Merhaba"
         },
         {
+			"abbreviation": {
+				"RFC3066": "tk-TK"
+			},
+			"name": "Turkmen"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "tvl-TVL"
+			},
+			"name": "Tuvaluan"
+		},
+        {
             "abbreviation": {
                 "gt": "uk",
-                "bt": "uk"
+                "bt": "uk",
+                "RFC3066": "uk-UA"
             },
             "name": "Ukrainian",
             "greeting": "Привіт"
@@ -536,28 +1068,68 @@ var Languages =  {
             "side": "right"
         },
         {
+			"abbreviation": {
+				"RFC3066": "ppk-ID"
+			},
+			"name": "Uma"
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "uz-UZ"
+			},
+			"name": "Uzbek" 
+		},
+        {
             "abbreviation": {
                 "gt": "vi",
-                "bt": "vi"
+                "bt": "vi",
+                "RFC3066": "vi-VN"
             },
             "name": "Vietnamese",
             "greeting": "Chào"
         },
         {
+			"abbreviation": {
+				"RFC3066": "wls-WLS"
+			},
+			"name": "Wallisian" 
+		},
+        {
             "abbreviation": {
-                "gt": "cy"
+                "gt": "cy",
+                "RFC3066": "cy-GB"
             },
             "name": "Welsh",
             "greeting": "Helo"
         },
         {
+			"abbreviation": {
+				"RFC3066": "wo-SN"
+			},
+			"name": "Wolof" 
+		},
+		{
+			"abbreviation": {
+				"RFC3066": "xh-ZA"
+			},
+			"name": "Xhosa"
+		},
+        {
             "abbreviation": {
-                "gt": "yi"
+                "gt": "yi",
+                "RFC3066": "yi-YD"
             },
             "name": "Yiddish",
             "greeting": "העלא",
             "side": "right"
-        }
+        },
+        {
+			"abbreviation": {
+				"RFC3066": "zu-ZU"
+			},
+			"name": "Zulu" 
+		},
+
     ],
     getByAbbreviation : function (abbreviation) {
         var abbreviationLanguages = [];

@@ -17,8 +17,7 @@
         };
     
         self.setTranslations = function (text, from, to) {
-            console.log("Setting TEXT:", text);
-            console.log("Setting FROM/TO:", from, to);
+            //console.log("Setting TEXT:", text, "Setting FROM/TO:", from, to);
             self.text = text;
             self.from = from;
             self.to = to;
@@ -43,8 +42,7 @@
                 self.getToLangArg();   
         };
         self.getResultObj = function (jqXHR) {
-            console.log("jqXHR Result: ",jqXHR);
-            //success, translation
+            //console.log("jqXHR Result: ",jqXHR);
             return {
                 "from": self.from,
                 "to": self.to,
@@ -54,7 +52,7 @@
         };
         
         self.ajaxCall = function () {
-            console.log("URL: ", self.getUrl());
+            console.log("Bing!", "URL: ", self.getUrl());
             return $.ajax({
                 url: self.getUrl(),
                 dataType: 'json',
