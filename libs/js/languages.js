@@ -29,7 +29,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "ar",
                 "bt": "ar",
-                "RFC3066": "ar-SA"
+                "RFC3066": "ar-SA",
+                "wl": "ar"
             },
             "name": "Arabic",
             "greeting": "مرحبا",
@@ -117,7 +118,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "bg",
                 "bt":"bg",
-                "RFC3066": "bg-BG"
+                "RFC3066": "bg-BG",
+                "wl": "lwa_bg"
             },
             "name": "Bulgarian",
             "greeting": "Здравейте"
@@ -155,7 +157,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "zh-cn",
                 "bt": "zh-CHS",
-                "RFC3066": "zh-CN"
+                "RFC3066": "zh-CN",
+                "wl": "zh_CN"
             },
             "name": "Chinese (Simplified)",
             "greeting": "你好"
@@ -164,7 +167,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "zh-tw",
                 "bt": "zh-CHT",
-                "RFC3066": "zh-TW"
+                "RFC3066": "zh-TW",
+                "wl": "zh_TW"
             },
             "name": "Chinese (Traditional)",
             "greeting": "你好"
@@ -258,7 +262,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "cs",
-                "bt": "cs"
+                "bt": "cs",
+                "wl": "lwa_cs"
             },
             "name": "Czech",
             "greeting": "Ahoj"
@@ -267,7 +272,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "da",
                 "bt": "da",
-                "RFC3066": "da-DK"
+                "RFC3066": "da-DK",
+                "wl": "lwa_da"
             },
             "name": "Danish",
             "greeting": "Hej"
@@ -276,7 +282,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "nl",
                 "bt": "nl",
-                "RFC3066": "nl-NL"
+                "RFC3066": "nl-NL",
+                "wl": "nl"
             },
             "name": "Dutch",
             "greeting": "Hallo"
@@ -291,7 +298,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "en",
                 "bt": "en",
-                "RFC3066": "en-GB"
+                "RFC3066": "en-GB",
+                "wl": "en"
             },
             "name": "English",
             "native_name": "English",
@@ -328,6 +336,12 @@ var Languages =  {
 		},
         {
             "abbreviation": {
+                "wl": "lwa_fa"
+            },
+            "name": "Farsi"
+        },
+        {
+            "abbreviation": {
                 "gt": "tl"
             },
             "name": "Filipino",
@@ -337,7 +351,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "fi",
                 "bt": "fi",
-                "RFC3066": "fi-FI"
+                "RFC3066": "fi-FI",
+                "wl": "lwa_fi"
             },
             "name": "Finnish",
             "greeting": "Hei"
@@ -346,7 +361,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "fr",
                 "bt": "fr",
-                "RFC3066": "fr-FR"
+                "RFC3066": "fr-FR",
+                "wl": "fr"
             },
             "name": "French",
             "greeting": "Bonjour"
@@ -371,7 +387,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "de",
                 "bt": "de",
-                "RFC3066": "de-DE"
+                "RFC3066": "de-DE",
+                "wl": "ge"
             },
             "name": "German",
             "greeting": "Hallo"
@@ -380,7 +397,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "el",
                 "bt": "el",
-                "RFC3066": "el-GR"
+                "RFC3066": "el-GR",
+                "wl": "el"
             },
             "name": "Greek",
             "greeting": "Γεια σας"
@@ -411,7 +429,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "he",
                 "bt": "he",
-                "RFC3066": "he-IL"
+                "RFC3066": "he-IL",
+                "wl": "lwa_he"
             },
             "name": "Hebrew",
             "greeting": "שלום",
@@ -425,7 +444,8 @@ var Languages =  {
 		},
         {
 			"abbreviation": {
-				"RFC3066": "ha-HA"
+				"RFC3066": "ha-HA",
+                "wl": "lwa_ha"
 			},
 			"name": "Hausa" 
 		},
@@ -433,7 +453,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "hi",
                 "bt": "hi",
-                "RFC3066": "hi-IN"
+                "RFC3066": "hi-IN",
+                "wl": "lwa_hi"
             },
             "name": "Hindi",
             "greeting": "नमस्त",
@@ -452,7 +473,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "hu",
                 "bt": "hu",
-                "RFC3066": "hu-HU"
+                "RFC3066": "hu-HU",
+                "wl": "lwa_hu"
             },
             "name": "Hungarian",
             "greeting": "Helló"
@@ -492,7 +514,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "it",
                 "bt": "it",
-                "RFC3066": "it-IT"
+                "RFC3066": "it-IT",
+                "wl": "it"
             },
             "name": "Italian",
             "greeting": "Ciao"
@@ -501,7 +524,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "ja",
                 "bt": "ja",
-                "RFC3066": "ja-JA"
+                "RFC3066": "ja-JA",
+                "wl": "ja"
             },
             "name": "Japanese",
             "greeting": "こんにちは"
@@ -564,7 +588,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "ko",
                 "bt": "ko",
-                "RFC3066": "ko-KR"
+                "RFC3066": "ko-KR",
+                "wl": "ko"
             },
             "name": "Korean",
             "greeting": "안녕하세요"
@@ -723,7 +748,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "no",
                 "bt": "no",
-                "RFC3066": "no-NO"
+                "RFC3066": "no-NO",
+                "wl": "lwa_no"
             },
             "name": "Norwegian",
             "greeting": "Hallo"
@@ -754,7 +780,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "pl",
                 "bt": "pl",
-                "RFC3066": "pl-PL"
+                "RFC3066": "pl-PL",
+                "wl": "lwa_pl"
             },
             "name": "Polish",
             "greeting": "Halo"
@@ -785,7 +812,8 @@ var Languages =  {
 		},
 		{
 			"abbreviation": {
-				"RFC3066": "ps-PK"
+				"RFC3066": "ps-PK",
+                "wl": "lwa_ps"
 			},
 			"name": "Pashto" 
 		},
@@ -793,7 +821,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "pt",
                 "bt": "pt",
-                "RFC3066": "pt-PT"
+                "RFC3066": "pt-PT",
+                "wl": "pt"
             },
             "name": "Portuguese",
             "greeting": "Olá"
@@ -815,7 +844,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "ro",
                 "bt": "ro",
-                "RFC3066": "ro-RO"
+                "RFC3066": "ro-RO",
+                "wl": "lwa_ro"
             },
             "name": "Romanian",
             "greeting": "Alo"
@@ -824,7 +854,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "ru",
                 "bt": "ru",
-                "RFC3066": "ru-RU"
+                "RFC3066": "ru-RU",
+                "wl": "ru"
             },
             "name": "Russian",
             "native_name": "Русский",
@@ -851,7 +882,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "sr",
-                "RFC3066": "sr-RS"
+                "RFC3066": "sr-RS",
+                "wl": "lwa_sr"
             },
             "name": "Serbian",
             "greeting": "Здраво",
@@ -889,7 +921,8 @@ var Languages =  {
         },
         {
             "abbreviation": {
-				"RFC3066": "so-SO"
+				"RFC3066": "so-SO",
+                "wl": "lwa_so"
 			},
 			"name": "Somali" 
 		},
@@ -903,7 +936,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "es",
                 "bt": "es",
-                "RFC3066": "es-ES"
+                "RFC3066": "es-ES",
+                "wl": "es"
             },
             "name": "Spanish",
             "greeting": "¡Hola"
@@ -926,7 +960,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "sv",
                 "bt": "sv",
-                "RFC3066": "sv-SE"
+                "RFC3066": "sv-SE",
+                "wl": "sv"
             },
             "name": "Swedish",
             "greeting": "Hallå"
@@ -987,7 +1022,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "th",
                 "bt": "th",
-                "RFC3066": "th-TH"
+                "RFC3066": "th-TH",
+                "wl": "lwa_th"
             },
             "name": "Thai",
             "greeting": "สวัสดี"
@@ -1032,7 +1068,8 @@ var Languages =  {
             "abbreviation": {
                 "gt": "tr",
                 "bt": "tr",
-                "RFC3066": "tr-TR"
+                "RFC3066": "tr-TR",
+                "wl": "lwa_tr"
             },
             "name": "Turkish",
             "greeting": "Merhaba"
@@ -1061,7 +1098,8 @@ var Languages =  {
         {
             "abbreviation": {
                 "gt": "ur",
-                "bt": "ur"
+                "bt": "ur",
+                "wl": "lwa_ur"
             },
             "name": "Urdu",
             "greeting": "خوش",

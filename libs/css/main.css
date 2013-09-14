@@ -112,15 +112,14 @@ button.remove i {
 .link.galaxy {
     color: black;
 }
-
+.link.contact {
+    color: yellow;
+    font-size: 50px;
+}
 .yoda_speak:before {
     content: url('../img/yoda_speak.gif');
     background-size: 10px 10px;
     zoom: 0.7;
-}
-.link.contact {
-    color: yellow;
-    font-size: 50px;
 }
 
 
@@ -284,6 +283,12 @@ section.header {
 }
 .qr img {
     display: block;
+}
+.qr_text.centered {
+    width: 115px;
+    font-size: 1em;
+    font-style: italic;
+    font-family: 'myriad-pro';
 }
 
 footer {
