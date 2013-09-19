@@ -39,7 +39,9 @@ $(window.document).ready(function () {
             root.YodaCurrentLanguageSet.setLanguageSet("stichoza");   
         } else if (translator === "mymem") {
             root.YodaCurrentLanguageSet.setLanguageSet("mymem");   
-        }
+        } /*else if (translator === "wl") {
+            root.YodaCurrentLanguageSet.setLanguageSet("wl");   
+        }*/
         
         YT.translationStack.restart();
     });
@@ -72,29 +74,39 @@ $(window.document).ready(function () {
         var textFillInPromise = promise.then(function (result) {
           
             var resultObject = YodaTalk.translator.getResultObj(result);
+            
             console.log("RESULT>>>:", resultObject);
+            
             YodaTalk.translationStack.pushTranslations(resultObject);
-            var currentResult = YodaTalk.translationStack.getCurrentResult();
-          
+            
             // returns a promise
-            return YodaTalk.translationStack.setNextText(currentResult);
+            return YodaTalk.translationStack.setNextText();
           
         }, function (error) {
             console.log("YodaTalk: Error: ", error);
         }, function (progress) {
             console.log("YodaTalk: Progress: ", progress);
         });
-          
+        
+        
         return textFillInPromise.then(function(result) {
-            console.log("YodaTalk: Result: ",result);
+            //console.log("YodaTalk: Result: ", result);
         }, function (error) {
             console.log("YodaTalk: Error: ", error);
         }, function (progress) {
             
+            // Get progress bar element
             var YodaProgressElement = YodaTalk.translationStack.getCurrent().progress;
-            if (!YodaProgressElement || !YodaProgressElement.progress) return;
-            YodaProgressElement.progress(parseFloat(progress));
+            
+            // If not defined, return false
+            if (!YodaProgressElement || !YodaProgressElement.progress) return false;
+            
+            // Try to progress with 0.00 - 1.00 values
+            YodaProgressElement.progress(parseFloat(progress).toFixed(2));
+            
+            // When progress bar returns true for isDone?, resolve a deferred object
             if (YodaProgressElement.isDone()) YodaTalk.translationStack.deferred.resolve();
+            
             //console.log("Progress %:", progress);
       });
     }
@@ -112,26 +124,27 @@ $(window.document).ready(function () {
         var nextTick = Q.when(),
             length = YodaTalk.translationStack.getStackSize();
         
+        // Process all translations that are in the stack
         for (var i = length; i > 1; i --) {
             nextTick = nextTick.then( processItem );
         }
-      
-        // After all translations happened
-        nextTick.then(function () {
-            YodaTalk.translationStack.toggleMiddleElements("hide");
-        });
         
+        nextTick.
+        // After all translations happened
+        then(function () {
+            YodaTalk.translationStack.toggleMiddleElements("hide");
+        }).
         // Scroll to the top of translation stack
-        nextTick.then(function () {
+        then(function () {
            $('html, body').animate({
                 scrollTop: YodaTalk.translationStack.stack[0].textElement.offset().top - 150
             }, 1500);
-        });
-      
-        nextTick.fin(function(result) {
-            console.log("YodaTalk: Result:", result); 
+        }).
+        // Finalize sequence
+        fin(function(result) {
+            //console.log("YodaTalk: Result: ", result); 
         }, function (error) {
-            console.log("YodaTalk: Error:", error);
+            console.log("YodaTalk: Error: ", error);
         });
         
     }

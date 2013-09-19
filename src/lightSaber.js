@@ -1,5 +1,3 @@
-"use strict";
-
 // Light Saber
 (function ($) {
     var colors =  [

@@ -1,0 +1,1 @@
+{"ts":1379214286355,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<?php\nfunction filter_text($text) {\n    return strip_tags(htmlspecialchars(trim($text)));\n}\n?>"]],"start1":0,"start2":0,"length1":0,"length2":94}]],"length":94}

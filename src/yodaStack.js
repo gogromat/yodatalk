@@ -1,5 +1,3 @@
-"use strict";
-
 (function ($) {
     
     var root = this,
@@ -105,24 +103,23 @@
             var selectoid = new root.Selectoid({
                 object: selectoidObject,
                 data: YodaLanguagesSet.current,
+                dataFormat: YodaLanguagesSet.currentFormat,
                 parameters: {
                     closeOnMouseLeave: false,
                     closeOnFocusOut: false,
                     button_class: "galaxy"
-                },
-                dataFormat: YodaLanguagesSet.currentFormat
+                }
             });
             
         } else {
-            
-            var prevVal = $("#" + root.Selectoid[selectoidObjectId].defaults.select).find("option:selected").val();
-            
+            //var prevVal = $("#" + root.Selectoid[selectoidObjectId].defaults.select).find("option:selected").val();
+            //en-GB
             root.Selectoid[selectoidObjectId].changeData({
-               data: YodaLanguagesSet.current,
-               dataFormat: YodaLanguagesSet.currentFormat,
-               parameters: {
-                   initial: prevVal
-               }
+                data: YodaLanguagesSet.current,
+                dataFormat: YodaLanguagesSet.currentFormat,
+                parameters: {
+                    //initial: prevVal
+                }
             });
         }
     };
@@ -187,23 +184,26 @@
         var r = this.getCurrent();
         return [r.result, r.language, this.getNext().language];
     };
-      
-      
-    HtmlStack.prototype.setNextText = function (text) {
-        var result = $.trim(this.getCurrentResult());
-        return this.slowTextInput(this.getCurrent().textElement, result);    
+    
+    HtmlStack.prototype.setNextText = function () {
+        var self = this,
+            resultString = $.trim(self.getCurrentResult());
+        // return a promise to-be-resolved
+        return self.slowTextInput(self.getCurrent().textElement, resultString);    
     };
-      
-      
+    
     HtmlStack.prototype.slowTextInput = function (textElement, text) {
-        var deferred = Q.defer(),
-            promise = deferred.promise.when(
-                root.Teletype(textElement[0], text, 25, true, function (i, l) {
-                    deferred.notify( parseFloat((i+1)/l).toFixed(2) );
-                })
-            );
-        this.deferred = deferred;
-        return promise;
+        var self = this,
+            promise;
+        self.deferred = Q.defer();
+        return self.deferred.promise.then(
+            root.Teletype(textElement[0], text, 30, true, 
+                function (index, length) {
+                    // deferred.notify(value) - causes promise to be notified of progress with value
+                    self.deferred.notify(parseFloat((index + 1) / length).toFixed(2) );
+                }
+            )
+        );
     };
       
       

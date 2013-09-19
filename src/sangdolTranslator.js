@@ -52,7 +52,7 @@
         };
         
         self.ajaxCall = function () {
-            console.log("Sangdol!", "URL: ", self.getUrl());
+            //console.log("Sangdol!", "URL: ", self.getUrl());
             return $.ajax({
                 url: self.getUrl(),
                 dataType: 'jsonp',

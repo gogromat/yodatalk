@@ -32,7 +32,7 @@
         return hashCode(getElementId(element));  
     };
           
-    var YodaProgress = function (element) {
+    var YodaProgress = function (element, options) {
     
         if ($.isEmptyObject(element)) return;
         
@@ -41,7 +41,7 @@
         if (YodaProgress[elementId]) {
             return YodaProgress[elementId];
         } else {
-            YodaProgress[elementId] = new ElementProgress($(element));
+            YodaProgress[elementId] = new ElementProgress($(element), options);
             return YodaProgress[elementId];
         }
     
@@ -63,6 +63,7 @@
     };
     
     ElementProgress.prototype.progress = function (progress) {
+        
         var self = this;
         
         if (progress > self.options.progress) {
@@ -117,4 +118,5 @@
     };
     
     root.YodaProgress = YodaProgress;
+    
 }).call(this, jQuery);

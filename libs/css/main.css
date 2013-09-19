@@ -95,7 +95,7 @@ button.remove i {
     padding-bottom: 20px;
     font-size: 100px;
     
-    background-color: none;
+    background-color: transparent;
 }
 .lightSaber .base {
 }

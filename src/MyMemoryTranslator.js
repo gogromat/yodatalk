@@ -52,7 +52,7 @@
         };
         
         self.ajaxCall = function () {
-            console.log("MyMemory!", "URL: ", self.getUrl());
+            //console.log("MyMemory!", "URL: ", self.getUrl());
             return $.ajax({
                 url: self.getUrl(),
                 dataType: 'json',

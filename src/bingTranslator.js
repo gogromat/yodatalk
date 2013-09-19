@@ -52,7 +52,7 @@
         };
         
         self.ajaxCall = function () {
-            console.log("Bing!", "URL: ", self.getUrl());
+            //console.log("Bing!", "URL: ", self.getUrl());
             return $.ajax({
                 url: self.getUrl(),
                 dataType: 'json',

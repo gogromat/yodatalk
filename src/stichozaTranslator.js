@@ -17,7 +17,7 @@
         };
     
         self.setTranslations = function (text, from, to) {
-            console.log("Setting TEXT:", text, "Setting FROM/TO:", from, to);
+            //console.log("Setting TEXT:", text, "Setting FROM/TO:", from, to);
             self.text = text;
             self.from = from;
             self.to = to;
@@ -41,7 +41,7 @@
                 self.getToLangArg(); 
         };
         self.getResultObj = function (jqXHR) {
-            console.log("jqXHR Result: ",jqXHR, jqXHR.result);
+            //console.log("jqXHR Result: ",jqXHR, jqXHR.result);
             return {
                 "from": self.from,
                 "to": self.to,
@@ -51,7 +51,7 @@
         };
         
         self.ajaxCall = function () {
-            console.log("Stichoza!", "URL: ", self.getUrl());
+            //console.log("Stichoza!", "URL: ", self.getUrl());
             return $.ajax({
                 url: self.getUrl(),
                 dataType: 'json',
@@ -64,4 +64,4 @@
     
 }).call(this, jQuery);
 
-$.fn.StichozaTranslator = this.StichozaTranslator;
+//$.fn.StichozaTranslator = this.StichozaTranslator;

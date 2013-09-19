@@ -14,8 +14,8 @@
     YodaLanguageSet.prototype.setLanguageSet = function (abbreviation) {
         var lang_abbr = abbreviation;
         
-        console.log(abbreviation);
-        
+        //console.log(abbreviation);
+    
         if (abbreviation === "bing") {
             lang_abbr = "bt";
             this.currentFormat = this.getLanguageFormat(lang_abbr);
@@ -32,7 +32,11 @@
             lang_abbr = "RFC3066";
             this.currentFormat = this.getLanguageFormat(lang_abbr);
             this.currentTranslator = new root.MyMemoryTranslator();
-        }
+        } /*else if (abbreviation === "wl") {
+            lang_abbr = "wl";
+            this.currentFormat = this.getLanguageFormat(lang_abbr);
+            this.currentTranslator = new root.WorldLingoTranslator();
+        } */
         
         if (this[abbreviation] == null) this[abbreviation] = this.languages.getByAbbreviation(lang_abbr);
         this.current = this[abbreviation];
@@ -54,6 +58,7 @@
     
     
     var YodaCurrentLanguageSet = new YodaLanguageSet();
+    
     // Set bing for now
     YodaCurrentLanguageSet.setLanguageSet("bing");
     

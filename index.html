@@ -6,14 +6,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>YodaTalk</title>
+        <title>YodaSlang</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="libs/css/normalize.css">
         <link rel="stylesheet" href="libs/css/boilerplate.css">
         <link rel="stylesheet" href="libs/css/main.css">
-        <link rel="stylesheet" href="node_modules/selectoid/lib/selectoid.css">
+        <link rel="stylesheet" href="node_modules/selectoid/lib/selectoid.min.css">
         <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
         
     </head>
@@ -29,7 +29,7 @@
         <section class="header">
             <div class="centered preBrand" id="preBrand"></div>
             <div class="header galaxy outline alt brand centered">{Yod{A</div>
-            <div class="header galaxy outline alt brand bottom centered">tAl]{K</div>
+            <div class="header galaxy outline alt brand bottom centered">sLaNg}</div>
         </section>
         
         <div class="hr"></div>
@@ -59,12 +59,12 @@
                 <br>
                 Do you want to see how it is difficult to translate human languages?
                 Even the Grand Master have problems keeping up with the meaning. 
-                Try YodaTalk, and see for yourself.
-                Just choose different languages, so the translation will be more Yoda-talk-like.
+                Try YodaSlang, and see for yourself.
+                Just choose different languages, so the translation will be more Yoda-slang-like.
                 As you can see now the default translation sequence is: 
                 English &rarr; Japanese &rarr; Swedish &rarr; English.
                 Be sure to try out other combinations of languages. 
-                YodaTalk is language-independent - wisdom of Master is accessible not only in English.
+                YodaSlang is language-independent - wisdom of Master is accessible not only in English.
                 It works in other languages just because the algorithms we use for language translations 
                 are not that good yet. 
                 These algorithms have a hard time tranlating human languages.
@@ -84,6 +84,7 @@
                 <button class="change_translation galaxy" data-value="stichoza">google (fast)</button>
                 <button class="change_translation galaxy" data-value="sangdol">google (slow)</button>
                 <button class="change_translation galaxy" data-value="mymem">MyMemory</button>
+                <!--<button class="change_translation galaxy" data-value="wl">WorldLingo</button>-->
             </span>
             
             <br>
@@ -173,8 +174,8 @@
         
         <section class="details">
             <div class="main centered three_columns">
-                <span class="galaxy outpline">YodaTalk</span> <i>does not shift words around</i> to make it
-                seem as if Master Yoda was talking. It only uses modern translation services. If you are looking for shifting words around, however, 
+                <span class="galaxy outpline">YodaSlang</span> <i>does not shift words around</i> to make it
+                seem as if Master Yoda was talking. It only uses translation services (usually machine translation). If you are looking for shifting words around, however, 
                 the <a href="http://www.yodaspeak.co.uk" class="galaxy link yoda_speak" target="_blank">YodaSpeak</a>
                 is a tool that might be of help to you. And may the force be with you.
             </div>
@@ -224,22 +225,26 @@
             </p>
         </footer>
         
+        <!--JQuery-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="libs/js/jquery_1.10.0_min.js"><\/script>')</script>
-        <script src="node_modules/q/q.js"></script>
         
-        <!--HTML Boilerplate's files, modernizer-->
+        <!--HTML Boilerplate's files, Modernizer-->
         <script src="libs/js/modernizr-2.6.2.min.js"></script>
         <script src="libs/js/plugins.js"></script>
+        
+        <!--A++ spec-compliant library "Q" -->
+        <script src="node_modules/q/q.js"></script>
         
         <!--Load Translation Languages script-->
         <script src="libs/js/languages.js"></script>
         
-        <!--Selectoid-->
-        <script src="node_modules/selectoid/lib/selectoid.js"></script>
+        <!--Selectoid - JS select box-->
+        <script src="node_modules/selectoid/lib/selectoid.min.js"></script>
         
         <!--Light Saber div-->
         <script src="src/lightSaber.js"></script>
+        
         
         <!-- Free google's translator using spreadsheets (author: Sangdol) -->
         <script src="src/sangdolTranslator.js"></script>
@@ -253,10 +258,13 @@
         <!-- Free MyMemory Translator -->
         <script src="src/MyMemoryTranslator.js"></script>
         
+        <!-- Free WorldLingo Translator -->
+        <!--<script src="src/WorldLingoTranslator.js"></script>-->
+        
         <!-- Progress Bar. Yoda Progress Bar -->
         <script src="src/yodaProgress.js"></script>
         
-        <!-- Mimics human typing of text -->
+        <!-- Teletype - mimics human typing of text -->
         <script src="src/teletype.js"></script>        
         
         <!-- Object that holds language sets -->
@@ -269,7 +277,7 @@
         <script src="src/yodaTalk.js"></script>
         
         <script>
-            console.clear();
+            //console.clear();
             
             var root = this;
             

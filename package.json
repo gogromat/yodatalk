@@ -28,6 +28,7 @@
   },
   
   "dependencies": {
-    
+    "selectoid": ">= 0.0.7",
+    "q": ">= 0.9.7"
   }
 }
