@@ -1,6 +1,1 @@
 
-
-
-[submodule "google"]
-	path = google
-	url = git@github.com:Stichoza/google-translate-php.git
