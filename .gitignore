@@ -7,3 +7,4 @@ worldlingo/
 src/WorldLingoTranslator.js
 src/ajaxFake.js
 src/q_0.9.7.js
+heroku-client/

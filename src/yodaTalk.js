@@ -75,7 +75,7 @@ $(window.document).ready(function () {
           
             var resultObject = YodaTalk.translator.getResultObj(result);
             
-            console.log("RESULT>>>:", resultObject);
+            //console.log("RESULT>>>:", resultObject);
             
             YodaTalk.translationStack.pushTranslations(resultObject);
             

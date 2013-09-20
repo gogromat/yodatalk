@@ -3,7 +3,7 @@
  * This file will return JSON response
  */
 require_once('../helpers/form_helpers.php');
-require_once('../google/GoogleTranslate.php');
+require_once('GoogleTranslate.php');
 
 $from = filter_text($_REQUEST['from']);
 $to   = filter_text($_REQUEST['to']);
