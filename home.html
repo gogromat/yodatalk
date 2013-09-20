@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="libs/css/main.css">
         <link rel="stylesheet" href="node_modules/selectoid/lib/selectoid.min.css">
         <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="libs/css/trip.min.css">
         
     </head>
     <body>
@@ -51,10 +52,20 @@
         </section>
         
         <br>
-        <br>    
+        <br>
+        
+        <div>
+            <span class="centered helpTools">
+                <button class="websiteTour galaxy">Take a tour</button>
+                <button class="togetherJS galaxy"><span class="">Help me out!</span><span class="hidden">Helping...</span></button>
+            </span>
+        </div>
+        
+        <br>
+        <br>
             
         <section class="introduction">        
-            <div class="main centered three_columns">
+            <div class="main centered three_columns mainTour">
                 To this page welcome!
                 <br>
                 Do you want to see how it is difficult to translate human languages?
@@ -79,7 +90,7 @@
         <br>
         
         <div>
-            <span class="centered">
+            <span class="centered languagesTour">
                 <button class="change_translation galaxy selectedTranslation" data-value="stichoza">google (fast)</button>
                 <button class="change_translation galaxy" data-value="bing"> BiNg </button>
                 <button class="change_translation galaxy" data-value="sangdol">google (slow)</button>
@@ -204,19 +215,22 @@
         
         <footer>
             <p class="centered">
+                
                 designed & developed by 
                 <br>
-                <a href="https://github.com/gogromat/" target="_blank" class="galaxy link">GogromaT</a>
+                <a href="https://github.com/gogromat/" target="_blank" class="galaxy link gogromat social_links">GogromaT</a>
                 <br>
-                <a href="https://plus.google.com/116898228043449492263/posts" class="link contact">
+                
+                <a href="https://plus.google.com/116898228043449492263/posts" class="link contact social_links">
                     <i class="icon-google-plus-sign icon-4"></i>
                 </a>
-                <a href="https://github.com/gogromat/" target="_blank" class="link contact">
+                <a href="https://github.com/gogromat/" target="_blank" class="link contact social_links">
                     <i class="icon-github-sign icon-4"></i>
                 </a>
-                <a href="https://twitter.com/Astafurov_Alex" target="_blank" class="link contact">
+                <a href="https://twitter.com/Astafurov_Alex" target="_blank" class="link contact social_links">
                     <i class="icon-twitter-sign icon-4"></i>
                 </a>
+                
                 <br>
                 <br>
                 <br>
@@ -244,7 +258,6 @@
         
         <!--Light Saber div-->
         <script src="src/lightSaber.js"></script>
-        
         
         <!-- Free google's translator using spreadsheets (author: Sangdol) -->
         <script src="src/sangdolTranslator.js"></script>
@@ -276,6 +289,13 @@
         <!--Main SRC file-->
         <script src="src/yodaTalk.js"></script>
         
+        <!--TogetherJS-->
+        <script src="https://togetherjs.com/togetherjs-min.js"></script>
+        
+        <!--TripJS-->
+        <script src="libs/js/trip.min.js"></script>
+        
+        
         <script>
             //console.clear();
             
@@ -287,7 +307,202 @@
                 root.Teletype("#preBrand", "A long time ago in a galaxy far, far away....", 100);
                 
                 // Activate Light Saber
-                root.LightSaber(".color_laser");                
+                root.LightSaber(".color_laser");
+                
+                
+                TogetherJSConfig_siteName = "YodaSlang";
+                TogetherJSConfig_toolName = "Help me out";
+                TogetherJSConfig_cloneClicks = $(".change_translation, .translate_button, .add_element, .remove, .selectoid");
+                TogetherJSConfig_findRoom = "yodaslang";
+                
+                $(".togetherJS").click(function() {
+                    $(this).toggleClass("selectedTogether")
+                        .children().toggleClass("hidden");
+                    root.TogetherJS(this); 
+                    return false;
+                });
+                
+                
+                var trip = new Trip([
+                    {
+                        sel: $(".websiteTour"),
+                        content: 'Welcome to YodaSlang! <br><br> This tour will guide you through the website. <br> Whenever you are ready to proceed on your own, <br> click on the "<b>Esc</b>" key on your keyboard. <br><br> Have a great time!<br><br>',
+                        delay: 12000,
+                        position: "s",
+                        expose: true,
+                        nextLabel: "Let's go!"
+                    },
+                    {
+                        sel: $(".togetherJS"),
+                        content: 'If you will still have problems after going through this tour, <br> you can ask for assistance by clicking <br> on "Help me out!" button',
+                        delay: 9000,
+                        position: "s",
+                        expose: true
+                    },
+                    {
+                        sel: $(".mainTour"),
+                        content: "YodaSlang translates different languages. <br> Because it is a difficult task, the results are not usually very precise. <br> Now it is your time to see why.",
+                        delay: 9000,
+                        position: "s",
+                        expose: true
+                    },
+                    {
+                        sel: $(".languagesTour"),
+                        content: "To begin, we start with translations",
+                        delay: 5000,
+                        position: "n",
+                        expose: true
+                    },
+                    {
+                        sel: $(".languagesTour"),
+                        content: 'This panel shows a number of translation tools you can use. <br>',
+                        position: "n",
+                        expose: true,
+                        delay: 8000
+                    },
+                    {
+                        sel: $(".change_translation[data-value=stichoza]"),
+                        content : 'By default the "Google" is selected for translation,',
+                        expose: true,
+                        delay: 5000
+                    },
+                    {
+                        sel : $(".change_translation[data-value=bing]"),
+                        content : 'but you can always switch to "Bing",',
+                        expose: true,
+                        delay: 4000
+                    },
+                    {
+                        sel : $(".change_translation[data-value=mymem]"),
+                        content : 'or "MyMemory".',
+                        expose: true,
+                        delay: 4000
+                    },
+                    {
+                        sel: $("#selectoid_0_button"),
+                        content: "Just keep in mind to check on the languages as you switch translation tools!",
+                        expose: true,
+                        position: "e",
+                        delay: 5000,
+                    },
+                    {
+                        sel: $("#selectoid_1_button"),
+                        content: "Just keep in mind to check on the languages as you switch translation tools!",
+                        expose: true,
+                        position: "e",
+                        delay: 5000,
+                    },
+                    {
+                        sel: $("#selectoid_2_button"),
+                        content: "Just keep in mind to check on the languages as you switch translation tools!",
+                        expose: true,
+                        position: "e",
+                        delay: 5000,
+                    },
+                    {
+                        sel: $("#selectoid_0_button"),
+                        content: 'Make sure that both input and output languages are the ones you want! <br> In this case we have "English" as input,',
+                        position : 'e',
+                        expose: true,
+                        delay: 8000
+                    },
+                    {
+                        sel: $("#selectoid_3_button"),
+                        content: 'and "English" as output.',
+                        position : 'e',
+                        expose: true,
+                        delay: 5500
+                    },
+                    {
+                        sel: $("#selectoid_1_button"),
+                        content: "And in the middle the languages should be <br> different from input languages. <br> (<i>otherwise what's the point, right?</i>).",
+                        position: "e",
+                        expose: true,
+                        delay: 10000
+                    },
+                    {
+                        sel: $($(".add_element")[1]),
+                        content: 'You can add more translations by clicking on "<span style="color:green;">Add Another</span>" button.',
+                        position: 'n',
+                        expose: true,
+                        delay: 8000
+                    },
+                    {
+                        sel: $($(".remove")[1]),
+                        content: 'You can remove translations by clicking on "<span style="color:red;">Remove</span>" button <br> next to the language you want to remove.',
+                        position: 'e',
+                        expose: true,
+                        delay: 9000
+                    },
+                    {
+                        sel: $($(".translate_button")[1]),
+                        content: "Whenever you are ready click this button to start translating!",
+                        position: "n",
+                        expose: true,
+                        delay: 8000
+                    },
+                    {
+                        sel: $($(".social_links")[0]),
+                        content: "This was developed by me, GogromaT.",
+                        position: "n",
+                        expose: true,
+                        delay: 5000
+                    },
+                    {
+                        sel: $($(".social_links")[1]),
+                        content: "You can check me out on google plus,",
+                        expose: true,
+                        position: 'n',
+                        delay: 6000
+                    },
+                    {
+                        sel: $($(".social_links")[2]),
+                        content: "my github page, ",
+                        expose: true,
+                        position: 'n',
+                        delay: 4000
+                    },
+                    {
+                        sel: $($(".social_links")[3]),
+                        content: "tweet me, ",
+                        expose: true,
+                        position: 'n',
+                        delay: 3500
+                    },
+                    {
+                        sel: $(".gittip-widget"),
+                        content: "or donate to a hungry coder through the GitTip :)",
+                        expose: true,
+                        position: "n",
+                        delay: 7000
+                    },
+                    {
+                        sel: $(".websiteTour"),
+                        content: "So have fun, And force be with you!",
+                        delay: 8000,
+                        position: "s",
+                        expose: true
+                    }
+                ], {
+                    tripTheme : "white",
+                    backToTopWhenEnded: true,
+                    delay: 3000,
+                    skipUndefinedTrip: true,
+                    //enableKeyBinding: true,
+                    showNavigation: true,
+                    prevLabel: "Go back",
+                    nextLabel: "Got it",
+                    finishLabel: "Got it",
+                    //canGoPrev: true,
+                    //canGoNext: true
+                }); 
+                
+                $(".websiteTour").click(function () {
+                    console.log("started");
+                    trip.start();
+                });
+
+                
             });
         </script>
         

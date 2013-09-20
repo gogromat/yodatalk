@@ -121,6 +121,9 @@ button.remove i {
     background-size: 10px 10px;
     zoom: 0.7;
 }
+a.social_links {
+    background-color: black;
+}
 
 
 
@@ -135,7 +138,7 @@ section.header {
 .preBrand {
     color: #20F7CD;
     font-family: Arial, sans-serif;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 .brand {
     font-size: 50px;
@@ -320,7 +323,7 @@ div.arrow-down {
 }
 
 .translate_button {
-    background-color: black; /*#7ab888;*/
+    background-color: black !important; /*#7ab888;*/
     /*height: 38px;*/
     /*border: solid 1px #F5F5F5;*/
     min-width: 150px;
@@ -348,7 +351,7 @@ span.centered {
     display: block;
     width: 520px;
 }
-.selectedTranslation {
+button.selectedTranslation {
     background-color: #339966;
     color: yellow;
 }
@@ -397,4 +400,22 @@ div.gittip-widget {
 }
 div.gittip-widget .gittip-inner a {
     color: black !important;
+}
+
+/* TogetherJS */
+.togetherjs-window {
+    z-index: 100001 !important;
+}
+#togetherjs-dock {
+    z-index: 100001 !important;
+}
+.selectedTogether {
+    background-color: #339966;
+    color: yellow;
+}
+
+
+/* Help tools buttons' span */
+span.helpTools {
+    width: 288px;
 }
