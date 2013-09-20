@@ -1,4 +1,5 @@
-
+node_modules/grunt*
+node_modules/.bin
 testQ.html
 dist/
 config.inc.php
