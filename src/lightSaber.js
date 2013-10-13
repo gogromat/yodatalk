@@ -16,9 +16,16 @@
         
         oldLightSaber = root.LightSaber;
     
-    LightSaber = function (element) {
+    LightSaber = function (element, delay) {
         //document.querySelectorAll(".color_laser").each ... style["color"]="red"
-        setInterval(function () {
+        this.delay = delay || 5000;
+        this.element = element;
+        this.start(element, delay || 5000);
+    };
+    
+    LightSaber.prototype.start = function () {
+        setTimeout(function () {
+            requestAnimationFrame(start);
             var length = colors.length,
                 currentColor = $(element).css("color"),
                 index = 0;
@@ -27,9 +34,8 @@
             }
             if (index == length-1) index = -1;
             $(element).css("color", colors[index+1]);
-        }, 5000);            
-    };
-    
+        }, delay);
+    }
     
     // Run LightSaber in noConflict mode, 
     // returning the LightSaber variable to its previous owner. 
