@@ -23,7 +23,7 @@
             self.to = to;
         };
         self.getBaseUrl = function () {
-            return "googleTranslator/translator.php";
+            return "../translators/google/translator.php";
         };
         self.getFromLangArg = function () {
             return "&from=" + self.from;
