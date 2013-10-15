@@ -1,0 +1,36 @@
+{
+  "name": "selectoid",
+  "title": "selectoid",
+  "description": "Selectoid is a JavaScript select box plugin",
+  "version": "0.0.7",
+  "keywords": [
+    "util",
+    "html",
+    "select",
+    "browser"
+  ],
+  "homepage": "https://github.com/gogromat/selectoid",
+  "author": {
+    "name": "gogromat",
+    "email": "gogromat@gmail.com"
+  },
+  "main": "dist/selectoid.js",
+  "bugs": {
+    "url": "https://github.com/gogromat/selectoid/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gogromat/selectoid.git"
+  },
+  "dependencies": {
+    "jquery": ">= 1.8.3"
+  },
+  "license": "MIT",
+  "readme": "Selectoid is a responsive JavaScript (+jQuery) select box plugin. The project is at this [link](https://github.com/gogromat/selectoid).",
+  "_id": "selectoid@0.0.7",
+  "dist": {
+    "shasum": "33c4a3773a61cf473209ac27832920e6b0eb64d3"
+  },
+  "_from": "selectoid@>= 0.0.7",
+  "_resolved": "https://registry.npmjs.org/selectoid/-/selectoid-0.0.7.tgz"
+}

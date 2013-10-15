@@ -1,4 +1,4 @@
-(function ($) {
+(function () {
 
     var root = this,
     
@@ -56,7 +56,7 @@
             width: element.parent().width(),
             extraWidth: 120,
             doneCSSRule: {
-              "background-image": "url('libs/img/yoda_flipped.png')"
+              "background-image": "url('img/yoda_flipped.png')"
             }
         };
         $.extend(this.options, options);
@@ -107,7 +107,6 @@
             this.options.element.show();
         }
     };
-    
         
     // Run YodaProgress in noConflict mode, 
     // returning the YodaProgress variable to its previous owner. 
@@ -117,6 +116,19 @@
         return this;
     };
     
+	// Register as a named AMD module, since YodaProgress can be concatenated with other
+	// files that may use define, but not via a proper concatenation script that
+	// understands anonymous AMD modules. A named AMD is safest and most robust
+	// way to register. Lowercase jquery is used because AMD module names are
+	// derived from file names, and YodaProgress is normally delivered in a lowercase
+	// file name. Do this after creating the global so that if an AMD module wants
+	// to call noConflict to hide this version of YodaProgress, it will work.
+	if ( typeof define === "function" && define.amd ) {
+		define("yodaProgress", ["jquery"], function () { 
+		    return YodaProgress; 
+		});
+	}
+    
     root.YodaProgress = YodaProgress;
     
-}).call(this, jQuery);
+}).call(this);

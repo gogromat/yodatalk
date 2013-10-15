@@ -10,12 +10,19 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="libs/css/normalize.css">
-        <link rel="stylesheet" href="libs/css/boilerplate.css">
-        <link rel="stylesheet" href="libs/css/main.css">
-        <link rel="stylesheet" href="node_modules/selectoid/lib/selectoid.min.css">
-        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.css">
-        <link rel="stylesheet" href="libs/css/trip.min.css">
+        <link rel="stylesheet" href="css/vendor/normalize.css">
+        <link rel="stylesheet" href="css/vendor/boilerplate.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="scripts/vendor/selectoid/lib/selectoid.min.css">
+        <link rel="stylesheet" href="scripts/vendor/font-awesome/css/font-awesome.css">
+        <link rel="stylesheet" href="css/vendor/trip.min.css">
+        
+        <!--HTML Boilerplate's files, Modernizer-->
+        <script src="scripts/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="scripts/vendor/plugins.js"></script>
+        
+        <!--RequireJS, main file, async load-->
+        <script src="scripts/vendor/requirejs/require.js" data-main="scripts/main.js"></script>
         
     </head>
     <body>
@@ -47,7 +54,7 @@
             </div> 
             <div class="lightSaber">
                 <!--todo: change to Symbol fonts' saber base -->
-                <sup class="base">__</sup><sup class="color_laser">________</sup> 
+                <sup class="base">_</sup><sup class="color_laser">____</sup> 
             </div>
         </section>
         
@@ -80,7 +87,7 @@
                 are not that good yet. 
                 These algorithms have a hard time tranlating human languages.
                 Be sure to try different input/output languages if you are a multilingual person.
-                Always keep in mind punctuation symbols and place them accordingly, whether its a period or a comma. 
+                Always keep in mind punctuation marks and place them accordingly, whether its a period or a comma. 
                 Put a single space between sentences. This may help translation engines to produce a better quality translation.
                 As Master once said: “In a dark place we find ourselves, and a little more knowledge lights our way.”
             </div>
@@ -199,7 +206,7 @@
         <br>
         
         <div class="centered qr">
-            <img src="libs/img/qr.png" width="100px" height="100px" class="centered" />
+            <img src="img/qr.png" width="100px" height="100px" class="centered" />
             <br>
             <span class="qr_text centered">Website's QR link</span>
         </div>
@@ -218,7 +225,11 @@
                 
                 designed & developed by 
                 <br>
-                <a href="https://github.com/gogromat/" target="_blank" class="galaxy link gogromat social_links">GogromaT</a>
+                
+                <a href="https://github.com/gogromat/" target="_blank" class="galaxy link gogromat social_links">
+                    GogromaT
+                </a>
+                
                 <br>
                 
                 <a href="https://plus.google.com/116898228043449492263/posts" class="link contact social_links">
@@ -235,302 +246,17 @@
                 <br>
                 <br>
                 <br>
-                <script data-gittip-username="gogromat" src="https://www.gittip.com/assets/widgets/0002.js"></script>
+                <script async defer data-gittip-username="gogromat" src="https://www.gittip.com/assets/widgets/0002.js"></script>
             </p>
         </footer>
         
-        <!--RequestAnimationFrame shim-->
-        <script src="libs/js/requestAnimFrameShim.js"></script>
-        
-        <!--JQuery-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="libs/js/jquery_1.10.0_min.js"><\/script>')</script>
-        
-        <!--HTML Boilerplate's files, Modernizer-->
-        <script src="libs/js/modernizr-2.6.2.min.js"></script>
-        <script src="libs/js/plugins.js"></script>
-        
-        <!--A++ spec-compliant library "Q" -->
-        <script src="node_modules/q/q.js"></script>
-        
-        <!--Load Translation Languages script-->
-        <script src="libs/js/languages.js"></script>
-        
-        <!--Selectoid - JS select box-->
-        <script src="node_modules/selectoid/lib/selectoid.min.js"></script>
-        
-        <!--Light Saber div-->
-        <script src="src/lightSaber.js"></script>
-        
-        <!-- Free google's translator using spreadsheets (author: Sangdol) -->
-        <script src="src/sangdolTranslator.js"></script>
-        
-        <!-- Free google's translator using spreadsheets (author: Stichoza) -->
-        <script src="src/stichozaTranslator.js"></script>
-        
-        <!-- Free Microsoft Bing Translator -->
-        <script src="src/bingTranslator.js"></script>
-        
-        <!-- Free MyMemory Translator -->
-        <script src="src/MyMemoryTranslator.js"></script>
-        
-        <!-- Free WorldLingo Translator -->
-        <!--<script src="src/WorldLingoTranslator.js"></script>-->
-        
-        <!-- Progress Bar. Yoda Progress Bar -->
-        <script src="src/yodaProgress.js"></script>
-        
-        <!-- Teletype - mimics human typing of text -->
-        <script src="src/teletype.js"></script>        
-        
-        <!-- Object that holds language sets -->
-        <script src="src/yodaLanguageSet.js"></script>   
-        
-        <!-- Yoda html stack -->
-        <script src="src/yodaStack.js"></script>
-        
-        <!--Main SRC file-->
-        <script src="src/yodaTalk.js"></script>
-        
-        <!--TogetherJS-->
-        <script src="https://togetherjs.com/togetherjs-min.js"></script>
-        
-        <!--TripJS-->
-        <script src="libs/js/trip.min.js"></script>
-        
-        
-        <script>
-            //console.clear();
-            
-            var root = this;
-            
-            $(document).ready(function () {
-                
-                // Activate Teletype and type in Star Wars opening
-                root.Teletype("#preBrand", "A long time ago in a galaxy far, far away....", 10);
-                
-                // Activate Light Saber
-                root.LightSaber(".color_laser");
-                
-                
-                TogetherJSConfig_siteName = "YodaSlang";
-                TogetherJSConfig_toolName = "Help me out";
-                TogetherJSConfig_cloneClicks = $(".change_translation, .translate_button, .add_element, .remove, .selectoid");
-                TogetherJSConfig_findRoom = "yodaslang";
-                
-                $(".togetherJS").click(function() {
-                    $(this).toggleClass("selectedTogether")
-                        .children().toggleClass("hidden");
-                    root.TogetherJS(this); 
-                    return false;
-                });
-                
-                
-                var trip = new Trip([
-                    {
-                        sel: $(".websiteTour"),
-                        content: 'Welcome to YodaSlang! <br><br> This tour will guide you through the website. <br> Whenever you are ready to proceed on your own, <br> click on the "<b>Esc</b>" key on your keyboard. <br><br> Have a great time!<br><br>',
-                        delay: 12000,
-                        position: "s",
-                        expose: true,
-                        nextLabel: "Let's go!"
-                    },
-                    {
-                        sel: $(".togetherJS"),
-                        content: 'If you will still have problems after going through this tour, <br> you can ask for assistance by clicking <br> on "Help me out!" button',
-                        delay: 9000,
-                        position: "s",
-                        expose: true
-                    },
-                    {
-                        sel: $(".mainTour"),
-                        content: "YodaSlang translates different languages. <br> Because it is a difficult task, the results are not usually very precise. <br> Now it is your time to see why.",
-                        delay: 9000,
-                        position: "s",
-                        expose: true
-                    },
-                    {
-                        sel: $(".languagesTour"),
-                        content: "To begin, we start with translations",
-                        delay: 5000,
-                        position: "n",
-                        expose: true
-                    },
-                    {
-                        sel: $(".languagesTour"),
-                        content: 'This panel shows a number of translation tools you can use. <br>',
-                        position: "n",
-                        expose: true,
-                        delay: 8000
-                    },
-                    {
-                        sel: $(".change_translation[data-value=stichoza]"),
-                        content : 'By default the "Google" is selected for translation,',
-                        expose: true,
-                        delay: 5000
-                    },
-                    {
-                        sel : $(".change_translation[data-value=bing]"),
-                        content : 'but you can always switch to "Bing",',
-                        expose: true,
-                        delay: 4000
-                    },
-                    {
-                        sel : $(".change_translation[data-value=mymem]"),
-                        content : 'or "MyMemory".',
-                        expose: true,
-                        delay: 4000
-                    },
-                    {
-                        sel: $("#selectoid_0_button"),
-                        content: "Just keep in mind to check on the languages as you switch translation tools!",
-                        expose: true,
-                        position: "e",
-                        delay: 5000,
-                    },
-                    {
-                        sel: $("#selectoid_1_button"),
-                        content: "Just keep in mind to check on the languages as you switch translation tools!",
-                        expose: true,
-                        position: "e",
-                        delay: 5000,
-                    },
-                    {
-                        sel: $("#selectoid_2_button"),
-                        content: "Just keep in mind to check on the languages as you switch translation tools!",
-                        expose: true,
-                        position: "e",
-                        delay: 5000,
-                    },
-                    {
-                        sel: $("#selectoid_0_button"),
-                        content: 'Make sure that both input and output languages are the ones you want! <br> In this case we have "English" as input,',
-                        position : 'e',
-                        expose: true,
-                        delay: 8000
-                    },
-                    {
-                        sel: $("#selectoid_3_button"),
-                        content: 'and "English" as output.',
-                        position : 'e',
-                        expose: true,
-                        delay: 5500
-                    },
-                    {
-                        sel: $("#selectoid_1_button"),
-                        content: "And in the middle the languages should be <br> different from input languages. <br> (<i>otherwise what's the point, right?</i>).",
-                        position: "e",
-                        expose: true,
-                        delay: 10000
-                    },
-                    {
-                        sel: $($(".add_element")[1]),
-                        content: 'You can add more translations by clicking on "<span style="color:green;">Add Another</span>" button.',
-                        position: 'n',
-                        expose: true,
-                        delay: 8000
-                    },
-                    {
-                        sel: $($(".remove")[1]),
-                        content: 'You can remove translations by clicking on "<span style="color:red;">Remove</span>" button <br> next to the language you want to remove.',
-                        position: 'e',
-                        expose: true,
-                        delay: 9000
-                    },
-                    {
-                        sel: $("#input_text"),
-                        content: "Here is where you input your text that is going to be translated.<br> You can change it in any way you like.",
-                        position: 'n',
-                        expose: true,
-                        delay: 8000
-                    },
-                    {
-                        sel: $($(".translate_button")[0]),
-                        content: "Whenever you are ready click this button to start translating!",
-                        position: "s",
-                        expose: true,
-                        delay: 8000
-                    },
-                    {
-                        sel: $($(".translate_button")[1]),
-                        content: "Or this one at the bottom (<i>they do the same thing</i>).",
-                        position: "n",
-                        expose: true,
-                        delay: 8000
-                    },
-                    {
-                        sel: $($(".social_links")[0]),
-                        content: "This was developed by me, GogromaT.",
-                        position: "n",
-                        expose: true,
-                        delay: 5000
-                    },
-                    {
-                        sel: $($(".social_links")[1]),
-                        content: "You can check me out on google plus,",
-                        expose: true,
-                        position: 'n',
-                        delay: 6000
-                    },
-                    {
-                        sel: $($(".social_links")[2]),
-                        content: "my github page, ",
-                        expose: true,
-                        position: 'n',
-                        delay: 4000
-                    },
-                    {
-                        sel: $($(".social_links")[3]),
-                        content: "tweet me, ",
-                        expose: true,
-                        position: 'n',
-                        delay: 3500
-                    },
-                    {
-                        sel: $(".gittip-widget"),
-                        content: "or donate to a hungry coder through the GitTip :)",
-                        expose: true,
-                        position: "n",
-                        delay: 7000
-                    },
-                    {
-                        sel: $(".websiteTour"),
-                        content: "So have fun, And force be with you!",
-                        delay: 8000,
-                        position: "s",
-                        expose: true
-                    }
-                ], {
-                    tripTheme : "white",
-                    backToTopWhenEnded: true,
-                    delay: 3000,
-                    skipUndefinedTrip: true,
-                    //enableKeyBinding: true,
-                    showNavigation: true,
-                    prevLabel: "Go back",
-                    nextLabel: "Got it",
-                    finishLabel: "Got it",
-                    //canGoPrev: true,
-                    //canGoNext: true
-                }); 
-                
-                $(".websiteTour").click(function () {
-                    console.log("started");
-                    trip.start();
-                });
-
-                
-            });
-        </script>
-        
-        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+        <script async defer type="text/javascript">
             /*
-                var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-                (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-                g.src='//www.google-analytics.com/ga.js';
-                s.parentNode.insertBefore(g,s)}(document,'script'));
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
             */
         </script>
     </body>

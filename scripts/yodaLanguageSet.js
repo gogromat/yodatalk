@@ -13,30 +13,30 @@
     
     YodaLanguageSet.prototype.setLanguageSet = function (abbreviation) {
         var lang_abbr = abbreviation;
-        
-        //console.log(abbreviation);
     
         if (abbreviation === "bing") {
+            
             lang_abbr = "bt";
             this.currentFormat = this.getLanguageFormat(lang_abbr);
             this.currentTranslator = new root.BingTranslator();
+            
         } else if (abbreviation === "google" || abbreviation === "sangdol" || abbreviation === "stichoza") {
+            
             lang_abbr = "gt";
             this.currentFormat = this.getLanguageFormat(lang_abbr);
             if (abbreviation === "stichoza") {
                 this.currentTranslator = new root.StichozaTranslator();
             } else {
                 this.currentTranslator = new root.SangdolTranslator();
-            } 
+            }
+            
         } else if (abbreviation === "mymem") {
+            
             lang_abbr = "RFC3066";
             this.currentFormat = this.getLanguageFormat(lang_abbr);
             this.currentTranslator = new root.MyMemoryTranslator();
-        } /*else if (abbreviation === "wl") {
-            lang_abbr = "wl";
-            this.currentFormat = this.getLanguageFormat(lang_abbr);
-            this.currentTranslator = new root.WorldLingoTranslator();
-        } */
+        
+        }
         
         if (this[abbreviation] == null) this[abbreviation] = this.languages.getByAbbreviation(lang_abbr);
         this.current = this[abbreviation];

@@ -10,14 +10,14 @@
     padding: 20px 5px;
 }
 
-.translation_list li.toggle_elements_li {
+.translation_list .toggle_elements_li {
     padding: 0;
 }
 
 .translation_list div.conversion {
     min-height: 106px;
     border: dashed 1px #F1F1F1;
-    padding-top: 0px;
+    padding-top: 0;
     padding-bottom: 8px;
     font-family: myriad-pro, sans-serif;
     
@@ -25,9 +25,7 @@
 
 .translation_list li.add_element {
     min-height: 40px;
-    width: 100%;
-    margin: 0px auto;
-    color: rgb(34, 85, 119);
+    margin: 0 auto;
     color: green;
 }
 
@@ -39,7 +37,8 @@
 
 .translation_list .add_element:hover {
     background-color: #F5F5F5;
-    cursor: cell;
+    /*cursor: cell;*/
+    cursor: pointer;
 }
 
 
@@ -150,7 +149,7 @@ section.header {
 }
 
 .intro {
-    font-size: 30px;
+    font-size: 26px;
     line-height: 40px;
     letter-spacing: 2px;
     text-shadow: 2px 2px #d1d4d6;
@@ -255,10 +254,9 @@ section.header {
         padding: 0;
     }
     ul.translation_list {
-        margin:0;
         padding-left: 0px;
         padding-right: 0px;
-        width: 100%;
+        width: 95%;
     }
     .translation_list div.conversion {
         min-height: 200px;
@@ -271,7 +269,6 @@ section.header {
         height: auto;
     }
 }
-
 
 
 .hr {

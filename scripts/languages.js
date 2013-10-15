@@ -1171,10 +1171,10 @@ var Languages =  {
     ],
     getByAbbreviation : function (abbreviation) {
         var abbreviationLanguages = [];
-        $.each(this.languages, function (index, language) {
+        for (var i = 0, length = this.languages.length; i < length; i++) {
             // == both undefined & null
-            if (language.abbreviation[abbreviation] != null) abbreviationLanguages.push(language);
-        });
+            if (this.languages[i].abbreviation[abbreviation] != null) abbreviationLanguages.push(this.languages[i]);
+        }
         return abbreviationLanguages;
     }
 };
