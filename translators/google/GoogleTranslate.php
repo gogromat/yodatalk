@@ -1,4 +1,4 @@
-<?php
+<?php namespace Stichoza\Google;
 
 /**
  * Google Translate PHP class
@@ -84,11 +84,16 @@ class GoogleTranslate {
      */
     public static final function makeCurl($url, array $params = array(), $cookieSet = false) {
         if (!$cookieSet) {
-            $cookie = tempnam("/tmp", "CURLCOOKIE");
+            $cookie = tempnam(sys_get_temp_dir(), "CURLCOOKIE");
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $output = curl_exec($ch);
+
+            // Clean up temporary file
+            unset($ch);
+            unlink($cookie);
+
             return $output;
         }
         
@@ -106,16 +111,11 @@ class GoogleTranslate {
      * Translate text
      * 
      * @param string $string Text to translate
-     * @return string Translated text
+     * @return string/boolean Translated text
      * @access public
      */
     public function translate($string) {
-        $url = sprintf(self::$urlFormat, rawurlencode($string), $this->langFrom, $this->langTo);
-        $result = preg_replace('!,+!', ',', self::makeCurl($url)); // remove repeated commas (causing JSON syntax error)
-        $resultArray = json_decode($result, true);
-        $finalResult = "";
-        foreach ($resultArray[0] as $results) $finalResult .= $results[0];
-        return $this->lastResult = $finalResult;
+        return $this->lastResult = self::staticTranslate($string, $this->langFrom, $this->langTo);
     }
 
     /**
@@ -124,14 +124,21 @@ class GoogleTranslate {
      * @param string $string Text to translate
      * @param string $from Language code
      * @param string $to Language code
-     * @return string Translated text
+     * @return string/boolean Translated text
      * @access public
      */
     public static function staticTranslate($string, $from, $to) {
         $url = sprintf(self::$urlFormat, rawurlencode($string), $from, $to);
         $result = preg_replace('!,+!', ',', self::makeCurl($url)); // remove repeated commas (causing JSON syntax error)
         $resultArray = json_decode($result, true);
-        return $resultArray[0][0][0];
+        $finalResult = "";
+        if (!empty($resultArray[0])) {
+            foreach ($resultArray[0] as $results) {
+                $finalResult .= $results[0];
+            }
+            return $finalResult;
+        }
+        return false;
     }
 
 }

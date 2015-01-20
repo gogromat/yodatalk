@@ -1,0 +1,13 @@
+{
+    "name": "gogromat/yodaslang",
+    "require": {
+        "stichoza/google-translate-php": "~2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "gogromat",
+            "email": "gogromat@gmail.com"
+        }
+    ]
+}

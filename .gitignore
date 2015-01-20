@@ -10,3 +10,5 @@ src/ajaxFake.js
 src/q_0.9.7.js
 heroku-client/
 node_modules/
+.idea/*
+vendor/*
